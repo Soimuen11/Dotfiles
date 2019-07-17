@@ -29,3 +29,14 @@
 	alias grep='grep --color=auto'
 	alias gpl='git pull'
 	alias gpsh='git push'
+	alias gckn='git checkout -b'
+	alias gb='git branch'
+
+	#TURNOFF
+	alias off='shutdown -P'
+	alias halt='halt -P'
+
+	#UPDATING
+	alias pm='sudo pacman -Syu'
+	alias au='sudo apt update'
+	alias aU='sudo apt upgrade'
