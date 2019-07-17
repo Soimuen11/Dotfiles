@@ -27,3 +27,5 @@
 	alias ga='git add'
 	alias gc='git commit -m'
 	alias grep='grep --color=auto'
+	alias gpl='git pull'
+	alias gpsh='git push'
