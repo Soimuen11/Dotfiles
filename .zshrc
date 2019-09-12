@@ -19,12 +19,14 @@
 
 # ALIASES
 	#STANDALONE	
-	alias czsh='cat .zshrc'
-	alias nzsh='nvim .zshrc'
-	alias szsh='source .zshrc'
+	alias czsh='cat /home/soimuen/.zshrc'
+	alias nzsh='nvim /home/soimuen/.zshrc'
+	alias szsh='source /home/soimuen/.zshrc'
 	alias ps='ps -u'
 
 	# GLOBAL
+	alias mk='mkdir'
+	alias tch='touch'
 	alias pk='pkill'
 	alias n='nvim'
 	alias VS='code' # visual studio code
@@ -34,8 +36,10 @@
 	alias t='terminator'
 	alias c='chromium &'
 	alias f='firefox&'
+	alias tp='htop'
+	alias tl='tail'
+	alias hd='head'
 	alias thd='thunderbird&'
-	alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 	alias gg='getent group'
 
 	#LIST
@@ -53,8 +57,10 @@
 	alias ga='git add'
 	alias gc='git commit -m'
 	alias glo='git log'
+	alias gls='git log --stat'
 	alias gd='git diff'
 	alias gs='git status'
+	alias gsta='git stash'
 	alias gpl='git pull'
 	alias gpsh='git push'
 	alias gchb='git checkout -b'
@@ -67,3 +73,13 @@
 	#UPDATING/UPGRADING
 	alias pm='sudo pacman -Syu'
 
+	#NETWORK
+		#nmtui (this is the one you want)
+		#nmcli dev wifi
+		#nmcli dev wifi connect APname password
+	
+	
+	#BATTERY
+	alias bat='acpi -b' #acpi is a very useful tool to check on your battery, among other things
+	# run acpi -V for more detailed info
+	#alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
