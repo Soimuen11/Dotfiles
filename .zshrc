@@ -1,8 +1,9 @@
 # Created by newuser for 5.7.1
-	
-	PROMPT=$'%m %n %/[%t]$'
+	export EDITOR=nvim	
+	PROMPT=$'%m %n %/[%t] $'
 	autoload -U compinit
 	compinit
+	bindkey -e
 
 #OPTIONS
 	setopt autocd 
@@ -23,6 +24,7 @@
 	alias nzsh='nvim /home/soimuen/.zshrc'
 	alias szsh='source /home/soimuen/.zshrc'
 	alias ps='ps -u'
+	alias za="zathura"
 
 	# GLOBAL
 	alias mk='mkdir'
@@ -50,6 +52,8 @@
 	alias lga='ls --group-directories-first --all'
 	
 	alias grep='grep --color=auto'
+
+	alias rr='rm -r'
 	
 	#GIT
 	alias gi='git init'
@@ -83,3 +87,10 @@
 	alias bat='acpi -b' #acpi is a very useful tool to check on your battery, among other things
 	# run acpi -V for more detailed info
 	#alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
+	
+	#SOUND
+	alias pavu='pavucontrol'
+
+	#image viewer = sxiv
+	#zathura = vi-based PDF viewer
+	

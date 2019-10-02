@@ -31,3 +31,7 @@ colorscheme PaperColor
 "syntax enable
 "set background=dark
 "colorscheme solarized
+
+let g:airline_theme='simple'
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
