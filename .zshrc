@@ -1,6 +1,8 @@
 # Created by newuser for 5.7.1
+	neofetch
+	feh --bg-fill /home/soimuen/Pictures/Desktop-Wallpaper/amazing-desktop.jpeg
 	export EDITOR=nvim	
-	PROMPT=$'%m %n %/[%t] $'
+	#PROMPT=$'%m %n %/[%t] $'
 	autoload -U compinit
 	compinit
 	bindkey -e
@@ -36,8 +38,8 @@
 	alias v='vim'
 	alias tm='tmux'
 	alias t='terminator'
-	alias c='chromium &'
-	alias f='firefox&'
+	alias c='chromium&'
+	alias f='firefox& '
 	alias tp='htop'
 	alias tl='tail'
 	alias hd='head'
@@ -46,6 +48,7 @@
 
 	#LIST
 	alias ls='ls --color=tty'
+	alias lnc='l --color=none'
 	alias l='ls -lh'
 	alias la='ls -a'
 	alias lg='ls --group-directories-first'
@@ -94,3 +97,18 @@
 	#image viewer = sxiv
 	#zathura = vi-based PDF viewer
 	
+	#IF MOUSE STOPS WORKING
+	#sudo modprobe -r psmouse
+	#sudo modprobe psmouse 
+	
+	#scan network
+	#nmap +ip a+ nmap -sn 10.1.0.85/24
+	#wireshark	
+	#nslookup
+	#wifite2
+	
+	PS1="$(tput setaf 200)%n";
+	PS1+="@$(tput setaf 166)%m"
+	PS1+=" $(tput setaf 4)%/"
+	PS1+=" $(tput setaf 1)~> $(tput sgr0)"
+	export PS1;
