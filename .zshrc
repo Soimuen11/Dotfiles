@@ -106,9 +106,11 @@
 	#wireshark	
 	#nslookup
 	#wifite2
-	
+
+	#PROMPT PIMPING
 	PS1="$(tput setaf 200)%n";
 	PS1+="@$(tput setaf 166)%m"
 	PS1+=" $(tput setaf 4)%/"
+	PS1+=$'\n'
 	PS1+=" $(tput setaf 1)~> $(tput sgr0)"
 	export PS1;
