@@ -1,6 +1,6 @@
 # Created by newuser for 5.7.1
-	neofetch
-	feh --bg-fill /home/soimuen/Pictures/Desktop-Wallpaper/amazing-desktop.jpeg
+	# neofetch
+	feh --bg-fill /home/soimuen/Pictures/Desktop-Wallpaper/Wallpaper
 	export EDITOR=nvim	
 	#PROMPT=$'%m %n %/[%t] $'
 	autoload -U compinit
@@ -108,9 +108,20 @@
 	#wifite2
 
 	#PROMPT PIMPING
-	PS1="$(tput setaf 200)%n";
-	PS1+="@$(tput setaf 166)%m"
-	PS1+=" $(tput setaf 4)%/"
-	PS1+=$'\n'
-	PS1+=" $(tput setaf 1)~> $(tput sgr0)"
-	export PS1;
+	# # for have colors
+	autoload -U colors
+	colors
+
+	host_color="yellow"
+	path_color="blue"
+	user_color="green"
+	cmd_color="magenta"
+
+	host="%{$fg[$user_color]%}%n%{$reset_color%}@%{$fg[$host_color]%}%m%{$reset_color%}"
+	cpath="%B%{$fg[$path_color]%}%~%b"
+	time="%{$fg[$time_color]%}%T%{$reset_color%}"
+		end="%{$fg[$cmd_color]%}%%%{$reset_color%} "
+
+PS1=" $cpath $end"
+PS1=" $end"
+RPS1="$host"
