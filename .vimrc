@@ -1,29 +1,24 @@
 "PLUGINS
 
 "PATHOGEN (PLUGIN MANAGER)
-execute pathogen#infect()
-
-
-"SYNTASTIC
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+call pathogen#infect()
+syntax on
+filetype plugin indent on
 
 "PLUGINS END
 
 "QUICK SETUP
 set laststatus=2
 set number
+" set rnu
 set autoindent
-"set wrap
-"set rnu
+set fdm=indent
+set tabstop=4
+set shiftwidth=4
+set cursorline
+set cursorcolumn
 
-syntax on
+
 set background=dark
 colorscheme PaperColor
 "colorscheme candy
@@ -31,7 +26,16 @@ colorscheme PaperColor
 "syntax enable
 "set background=dark
 "colorscheme solarized
-
-let g:airline_theme='simple'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+"QUICK SETUP END
