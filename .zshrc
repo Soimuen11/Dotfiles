@@ -10,9 +10,6 @@ autoload -U compinit
 compinit
 bindkey -e
 
-
-
-
 #OPTIONS
 	setopt autocd 
 	setopt autonamedirs

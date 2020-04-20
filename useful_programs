@@ -22,6 +22,7 @@ moc
 vim
 neovim
 git
+broot
 neofetch
 sxiv
 zathura
@@ -37,4 +38,6 @@ pavucontrol
 texlive-full
 feh
 virtualbox
+i3
+dbus
 
