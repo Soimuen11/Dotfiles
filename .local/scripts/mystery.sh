@@ -53,3 +53,4 @@ counter=$(($counter + 1))
 done
 echo "well done, you found me"
 echo "you needed $counter shots"
+exit 0
