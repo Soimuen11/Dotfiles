@@ -12,7 +12,6 @@ fi
 declare -a dirs_to_check=("PDFs" "TBS-Movies" "TBS-Music" "TBS-Pictures")
 for dir in "${dirs_to_check[@]}"
 do
-	echo $dir
 	if [[ ! -d $dir ]];
 		then echo "dir does not exist"
 		echo "creating directory $dir"
