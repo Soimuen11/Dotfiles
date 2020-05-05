@@ -7,7 +7,7 @@ set -o nounset
 #Project name as a parameter
 # cd ~/Documents/Projects
 dir=$1
-mkdir "$dir" "$dir"/css "$dir"/js
+mkdir "$dir" "$dir"/css "$dir"/js "$dir"/img
 touch "$dir"/index.html "$dir"/css/style.css "$dir"/js/script.js "$dir"/readme.md 
 cd "$dir"
 pwd

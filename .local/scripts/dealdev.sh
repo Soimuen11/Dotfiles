@@ -3,24 +3,25 @@
 #display available devices
 lsblk -lp
 dirs=("usb" "usb2" "usb3" "usb4")
+devices=("/dev/sdb1" "/dev/sdc1" "/dev/sdd1" "/dev/sde1")
 
 #set up mounting directories
 setup () {
 	for dir in "${dirs[@]}"
 	do
 		if [[ ! -d /run/media/$dir ]]; 
-			then mkdir -p /run/media/$dir
+			then mkdir /run/media/$dir
+			echo "created /run/media/$dir"
 		fi
 	done
 }
 
 #mounting devs in /run/media/usb?
 mounting () {
-	devices=("/dev/sdb1" "/dev/sdc1" "/dev/sdd1" "/dev/sde1")
 	for dev in "${devices[@]}"
 	do
 		if [[ -b  "$dev" ]]; 
-		then echo "disk exists [$dev]"
+			then echo "disk exists [$dev]"
 			for dir in "${dirs[@]}"
 			do
 				sudo mount /run/media/$dir
@@ -40,20 +41,16 @@ unmounting () {
 #set up environment if --setup parameter is specified
 #short paramter -s
 if [[ $1 = "setup" ]] || [[ $1 = "-s" ]];
-then 
-	setup | exit 0
+	then setup
 fi
 
 #mount external devices if -m or --mounter is specified
 if [[ $1 = "-m" ]] || [[ $1 = "--mounter" ]];
-then 
-	mounting | exit 0
-#unmount external devices if -u or --unmount is specified
-else if [[ $1 = "-u" ]] || [[ $1 = "--unmount" ]]; 
-then 
-	unmount | exit 0
+	then mounting
+	#unmount external devices if -u or --unmount is specified
+elif [[ $1 = "-u" ]] || [[ $1 = "--unmount" ]]; 
+	then unmounting
 fi
-# exit 0
 
 # possible improvements :
 # 3. écouter les événements udev et qui te propose de monter tes clés
