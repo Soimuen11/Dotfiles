@@ -1,0 +1,80 @@
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# Verbosity 
+	alias \
+		cp="cp -iv" \
+		mv="mv -iv" \
+		rm="rm -vI" \
+		rr="rm -r -vI"
+		mk="mkdir -pv" \
+		tch="touch -v"
+
+## Colorize commands when possible.
+	alias \
+		grep="grep --color=auto" \
+		diff="diff --color=auto" \
+	 	lx="exa" \
+	 	lnc="l --color=none" \
+	 	l="ls -lh" \
+	 	la="ls -a" \ 
+	 	lg="ls --group-directories-first" \
+	 	lga="ls --group-directories-first --all"
+
+## Shell config
+	alias \
+		czsh="cat /home/soimuen/.zshrc" \
+		nzsh="nvim /home/soimuen/.zshrc" \
+		szsh="source /home/soimuen/.zshrc"
+
+## Common commands
+	alias \
+		ps="ps -u" \
+		za="zathura" \
+		pk="pkill" \
+		n="nvim" \
+		v="vim" \
+		tm="tmux" \
+		mp="mocp"
+
+## Web browsing
+	alias \
+		chrome="google-chrome-stable" \
+		f="firefox&" \
+		viv="vivaldi-stable&" \
+		qu="qutebrowser"
+
+## System managements
+	alias \ 
+		tp="htop" \
+		thd="thunderbird&" \
+		cl="calcurse" \
+		nmt="neomutt" \
+		gg="getent group" \
+		off="shutdown -P +0" \
+		pm="sudo pacman -Syu" \
+		# by="acpi -b" \ 
+		pavu="pavucontrol" 
+
+## Git
+	alias \
+		gi="git init" \
+		gcl="git clone" \
+		ga="git add" \
+		gc="git commit -m" \
+		gcv="git commit --verbose" \
+		glo="git log" \
+		gls="git log --stat" \
+		gd="git diff" \
+		gs="git status" \
+		gsta="git stash" \
+		gpl="git pull" \
+		gpsh="git push" \ 
+		# gch="git checkout" \ 
+		gchb="git checkout -b" \
+		gb="git branch" \
+		gm="git merge"
+
+#weirdoes causing bugs in current config
+	alias by="acpi -b"
+	alias gch="git checkout"

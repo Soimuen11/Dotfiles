@@ -205,7 +205,12 @@ bindsym Mod4+r mode "resize"
 #######################################################################
 exec i3-config-wizard
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec feh --bg-fill /home/soimuen/Pictures/Desktop-Wallpaper/Wallpaper
 exec picom -b
 default_border none
-default_border pixel 5
+default_border pixel 2
+
+#autostart
+exec_always termite
+# exec vivaldi-stable
 
