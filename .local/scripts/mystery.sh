@@ -1,24 +1,26 @@
 #!/bin/bash
-# ==================================================
-# |\			/| '		 '	============	
-# ||\		   /|| ''        ' /  ______    \
-# || \		  / || ' '       ' | |		 |	|
-# ||  \		 /  || '  '      ' | |   	 |  |
-# ||   \	/   || '   '     ' | |       |  |
-# ||    \  /    || '    '    ' | |       |  |
-# ||	 \/     || '	 '   ' | |       |  |
-# ||			|| '      '  ' | |       |  |
-# ||			|| '       ' ' | | 		 |  |
-# ||			|| '        '' \  \=====/ QQQQ      
-# ||			|| '         '  \_________/QQQQQQ
-#Welcome to Mystery Number Quest			QQQQQQ
-#===================================================
+#  __  __                 _                         
+# |  \/  |  _   _   ___  | |_    ___   _ __   _   _ 
+# | |\/| | | | | | / __| | __|  / _ \ | '__| | | | |
+# | |  | | | |_| | \__ \ | |_  |  __/ | |    | |_| |
+# |_|  |_|  \__, | |___/  \__|  \___| |_|     \__, |
+#           |___/                             |___/ 
+#  _   _                       _                   
+# | \ | |  _   _   _ __ ___   | |__     ___   _ __ 
+# |  \| | | | | | | '_ ` _ \  | '_ \   / _ \ | '__|
+# | |\  | | |_| | | | | | | | | |_) | |  __/ | |   
+# |_| \_|  \__,_| |_| |_| |_| |_.__/   \___| |_|   
+#                                                  
+#   ___                         _   
+#  / _ \   _   _    ___   ___  | |_ 
+# | | | | | | | |  / _ \ / __| | __|
+# | |_| | | |_| | |  __/ \__ \ | |_ 
+#  \__\_\  \__,_|  \___| |___/  \__|
+#
 #You can choose the level of difficulty as a parameter
 #when starting the game. Like so :
 # ./mystery --easy 
 #You may also choose normal, hard, extreme, hardcore and insane.
-
-
 #default range
 range=100
 if [[ $1 = "--easy" ]]
@@ -46,8 +48,6 @@ if [[ $number -gt $mystery ]]
 	then echo "it is less"
 elif [[ $number -lt $mystery ]]
 	then echo "it is more"
-elif [[ $number == "" ]]
-	then echo "enter a number, not a string"
 fi
 counter=$(($counter + 1))
 done
