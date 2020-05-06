@@ -1,0 +1,20 @@
+nzsh
+ls
+ls -a
+mv .aliasrc .config/zshenv
+szsh
+la
+nzsh
+la
+szsh
+history
+la
+ls .config
+n .config/calcurse/conf
+calcurse
+by
+gg
+acpi
+by
+battery
+by
