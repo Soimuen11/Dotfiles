@@ -3,15 +3,17 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
 # Verbosity 
 	alias \
-		cp="cp -iv" \
-		mv="mv -iv" \
-		rm="rm -vI" \
-		rr="rm -r -vI"
-		mk="mkdir -pv" \
-		tch="touch -v"
+		cp="cp -v" \
+		mv="mv -v" \
+		rm="rm -v" \
+		rr="rm -r -v"
+		
+		alias mk="mkdir -pv" 
+		alias tch="touch"
 
 ## Colorize commands when possible.
 	alias \
+		ls="ls --color=auto" \
 		grep="grep --color=auto" \
 		diff="diff --color=auto" \
 	 	lx="exa" \
@@ -39,22 +41,21 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
 ## Web browsing
 	alias \
-		chrome="google-chrome-stable" \
+		chrome="google-chrome-stable&" \
 		f="firefox&" \
 		viv="vivaldi-stable&" \
-		qu="qutebrowser"
+		qu="qutebrowser&" \
+		thd="thunderbird&" 
 
 ## System managements
-	alias \ 
-		tp="htop" \
-		thd="thunderbird&" \
-		cl="calcurse" \
-		nmt="neomutt" \
-		gg="getent group" \
-		off="shutdown -P +0" \
-		pm="sudo pacman -Syu" \
-		# by="acpi -b" \ 
-		pavu="pavucontrol" 
+	alias by="acpi -b"
+	alias cl="calcurse" 
+	alias nmt="neomutt" 
+	alias gg="getent group" 
+	alias off="shutdown -P now" 
+	alias pm="sudo pacman -Syu" 
+	alias pavu="pavucontrol" 
+	alias tp="htop" 
 
 ## Git
 	alias \
@@ -64,17 +65,15 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 		gc="git commit -m" \
 		gcv="git commit --verbose" \
 		glo="git log" \
+		glg="git log --graph" \
 		gls="git log --stat" \
 		gd="git diff" \
 		gs="git status" \
 		gsta="git stash" \
 		gpl="git pull" \
 		gpsh="git push" \ 
-		# gch="git checkout" \ 
-		gchb="git checkout -b" \
-		gb="git branch" \
-		gm="git merge"
 
-#weirdoes causing bugs in current config
-	alias by="acpi -b"
-	alias gch="git checkout"
+		alias gch="git checkout"
+		alias gchb="git checkout -b" 
+		alias gm="git merge"
+		alias gb="git branch" 
