@@ -10,16 +10,16 @@ filetype plugin indent on
 "QUICK SETUP
 set laststatus=2
 set number
-" set rnu
+set relativenumber 
+set wildmenu
+set wildmode=list:longest,full
+set encoding=utf-8
 set autoindent
 set fdm=indent
 set tabstop=4
 set shiftwidth=4
 set cursorline
 set cursorcolumn
-"set list
-
-
 set background=dark
 colorscheme PaperColor
 "colorscheme candy
@@ -27,16 +27,11 @@ colorscheme PaperColor
 "syntax enable
 "set background=dark
 "colorscheme solarized
+let g:syntastic_tex_checkers = ['lacheck']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 
 "QUICK SETUP END
