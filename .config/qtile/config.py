@@ -1,15 +1,19 @@
+import os
+import re
+import socket
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget
 from typing import List  # noqa: F401
-# from autostart.py import *
 
 mod = "mod4"
 
 keys = [
     # Switch between windows in current stack pane
-    Key([mod], "k", lazy.layout.down()),
-    Key([mod], "j", lazy.layout.up()),
+    Key([mod], "k", lazy.layout.up()),
+    Key([mod], "j", lazy.layout.down()),
+    Key([mod], "h", lazy.layout.left()),
+    Key([mod], "l", lazy.layout.right()),
 
     # Move windows up or down in current stack
     Key([mod, "control"], "k", lazy.layout.shuffle_down()),
@@ -49,8 +53,10 @@ for i in groups:
     ])
 
 layouts = [
-    layout.Max(),
-    layout.Stack(num_stacks=2)
+    # layout.Max(),
+    # layout.Floating(border_focus="ffffff", border_width=2),
+    # layout.Stack(num_stacks=2),
+    layout.Bsp()
 ]
 
 widget_defaults = dict(
@@ -62,14 +68,17 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
+        #replace "bottom" by "top" to put bar at the top
         bottom=bar.Bar(
             [
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
-                widget.TextBox("default config", name="default"),
                 widget.Systray(),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+                widget.Moc(play_color="ffffff", max_chars=20),
+                widget.Net(),
+                widget.Battery()
             ],
             24,
         ),
@@ -119,5 +128,3 @@ focus_on_window_activation = "smart"
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
-
-# autostart.desktop_setup()
