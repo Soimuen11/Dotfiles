@@ -1,8 +1,9 @@
 import os
 import re
-import socket
+# import socket
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
+# from libqtile import hook
 from libqtile import layout, bar, widget
 from typing import List  # noqa: F401
 
@@ -39,24 +40,28 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     Key([mod], "r", lazy.spawncmd()),
+
+     # Sound
+    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute"))
 ]
 
 groups = [Group(i) for i in "123456789"]
 
 for i in groups:
     keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen()),
-
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
-    ])
+            # mod1 + letter of group = switch to group
+            Key([mod], i.name, lazy.group[i.name].toscreen()),
+            # mod1 + shift + letter of group = switch to & move focused window to group
+            Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
+        ])
 
 layouts = [
-    # layout.Max(),
-    # layout.Floating(border_focus="ffffff", border_width=2),
+    layout.Bsp(),
+    layout.Max(),
+    layout.Floating(border_focus="ffffff", border_width=2),
     # layout.Stack(num_stacks=2),
-    layout.Bsp()
 ]
 
 widget_defaults = dict(
@@ -71,14 +76,19 @@ screens = [
         #replace "bottom" by "top" to put bar at the top
         bottom=bar.Bar(
             [
-                widget.GroupBox(),
+                widget.GroupBox(background="696969"),
                 widget.Prompt(),
-                widget.WindowName(),
-                widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                widget.Moc(play_color="ffffff", max_chars=20),
-                widget.Net(),
-                widget.Battery()
+                widget.WindowName(background="708090"),
+                widget.Clock(background="228B22",format='%Y-%m-%d %a %I:%M %p'),
+                widget.Moc(background="2F4F4F",play_color="ffffff", max_chars=20),
+                widget.MemoryGraph(),
+                widget.Battery(background="0000FF"),
+                widget.Pacman(background="FF0000")
+                # widget.Systray(),
+                # widget.NetGraph(),
+                # widget.Wlan(),
+                # widget.PulseVolume(),
+                # widget.Volume()
             ],
             24,
         ),
