@@ -1,12 +1,12 @@
 import os
 import re
-# import socket
-from libqtile.config import Key, Screen, Group, Drag, Click
+from libqtile.config import Key, Screen, Group, Match, Drag, Click
 from libqtile.command import lazy
-# from libqtile import hook
 from libqtile import layout, bar, widget
+# from libqtile import hook
 from typing import List  # noqa: F401
 
+### KEYBINDINGS ###
 mod = "mod4"
 
 keys = [
@@ -39,7 +39,8 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
-    Key([mod], "r", lazy.spawncmd()),
+    # Key([mod], "r", lazy.spawncmd()),
+    Key([mod], "d", lazy.spawn("dmenu_run")),
 
      # Sound
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
@@ -47,48 +48,69 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute"))
 ]
 
+# WORKSPACES (TERM, WEB, MAIL...) TO-BE-DONE
+# workspaces = [
+#       Group("1. Term"),
+#       Group("2. Web"),
+#       Group("3. Mail"), 
+#       Group("4. VBox"),
+#       Group("5. Music"),
+#       Group("6. Video"),
+#       Group("7. None"),
+#       Group("8. None"),
+#       Group("9. None"),
+# ]
+
+# groups = [Group(i) for i in workspaces]
+
 groups = [Group(i) for i in "123456789"]
 
 for i in groups:
     keys.extend([
-            # mod1 + letter of group = switch to group
+            # mod1 + nb of group = switch to group
             Key([mod], i.name, lazy.group[i.name].toscreen()),
-            # mod1 + shift + letter of group = switch to & move focused window to group
+            # mod1 + shift + nb of group = switch to & move focused window to group
             Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
         ])
+
+### LAYOUTS ###
 
 layouts = [
     layout.Bsp(),
     layout.Max(),
-    layout.Floating(border_focus="ffffff", border_width=2),
-    # layout.Stack(num_stacks=2),
+    # layout.Floating(border_focus="ffffff", border_width=2),
 ]
 
+##### DEFAULT WIDGET SETTINGS #####
+
 widget_defaults = dict(
-    font='sans',
-    fontsize=12,
-    padding=3,
+    font="Ubuntu Mono",
+    fontsize = 12,
+    padding = 5,
 )
 extension_defaults = widget_defaults.copy()
 
+##### WIDGETS #####
+
 screens = [
     Screen(
-        #replace "bottom" by "top" to put bar at the top
+        #replace "bottom" by "top" to put bar at the top 
+        #(or "top" by "bottom")
         bottom=bar.Bar(
             [
-                widget.GroupBox(background="696969"),
-                widget.Prompt(),
-                widget.WindowName(background="708090"),
-                widget.Clock(background="228B22",format='%Y-%m-%d %a %I:%M %p'),
-                widget.Moc(background="2F4F4F",play_color="ffffff", max_chars=20),
-                widget.MemoryGraph(),
-                widget.Battery(background="0000FF"),
-                widget.Pacman(background="FF0000")
-                # widget.Systray(),
-                # widget.NetGraph(),
-                # widget.Wlan(),
-                # widget.PulseVolume(),
-                # widget.Volume()
+                widget.GroupBox(font="Ubuntu Bold", borderwidth = 1, highlight_method = "block", rounded=False),
+                widget.TextBox(text='', background="000000", foreground="2F4F4F", padding=0, fontsize=60, width=23),
+                # widget.Prompt(),
+                widget.WindowName(background="2F4F4F"),
+                widget.TextBox(text='', background="2F4F4F", foreground="000000", padding=0, fontsize=60, width=23),
+                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+                widget.TextBox(text='', background="000000", foreground="2F4F4F", padding=0, fontsize=60, width=23),
+                widget.Battery(background="2F4F4F", format="{percent:2.0%} {hour:d}h{min:02d}"),
+                widget.TextBox(text='', background="2F4F4F", foreground="000000", padding=0, fontsize=60, width=23),
+                widget.CPUGraph(),
+                widget.TextBox(text='', background="2F4F4F", foreground="000000", padding=0, fontsize=60, width=23),
+                widget.QuickExit(default_text="\u23FB", fontsize=18, countdown_format="{}", countdown_start=10),
+                widget.Moc(background="2F4F4F",play_color="ffffff", max_chars=20)
             ],
             24,
         ),
