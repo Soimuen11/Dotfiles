@@ -16,6 +16,18 @@ keys = [
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
 
+    #switch place of windows (left/right/bottom/up)
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
+
+    #Increase or decrease size of windows
+    Key([mod, "control"], "j", lazy.layout.grow_down()),
+    Key([mod, "control"], "k", lazy.layout.grow_up()),
+    Key([mod, "control"], "h", lazy.layout.grow_left()),
+    Key([mod, "control"], "l", lazy.layout.grow_right()),
+
     # Move windows up or down in current stack
     Key([mod, "control"], "k", lazy.layout.shuffle_down()),
     Key([mod, "control"], "j", lazy.layout.shuffle_up()),
@@ -76,8 +88,10 @@ for i in groups:
 ### LAYOUTS ###
 
 layouts = [
+    layout.MonadTall(),
     layout.Bsp(),
     layout.Max(),
+    layout.Stack()
     # layout.Floating(border_focus="ffffff", border_width=2),
 ]
 
@@ -108,9 +122,12 @@ screens = [
                 widget.Battery(background="2F4F4F", format="{percent:2.0%} {hour:d}h{min:02d}"),
                 widget.TextBox(text='', background="2F4F4F", foreground="000000", padding=0, fontsize=60, width=23),
                 widget.CPUGraph(),
+                widget.TextBox(text='', background="000000", foreground="2F4F4F", padding=0, fontsize=60, width=23),
+                widget.CurrentLayout(background="2F4F4F", fontsize = 15),
                 widget.TextBox(text='', background="2F4F4F", foreground="000000", padding=0, fontsize=60, width=23),
                 widget.QuickExit(default_text="\u23FB", fontsize=18, countdown_format="{}", countdown_start=10),
-                widget.Moc(background="2F4F4F",play_color="ffffff", max_chars=20)
+                # widget.TextBox(text='', background="000000", foreground="0000FF", padding=0, fontsize=60, width=23),
+                widget.Moc(background="0000FF",play_color="ffffff", max_chars=20),
             ],
             24,
         ),
