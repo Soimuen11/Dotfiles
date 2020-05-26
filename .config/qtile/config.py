@@ -51,8 +51,12 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
-    # Key([mod], "r", lazy.spawncmd()),
+
+    # Specific apps bindings
     Key([mod], "d", lazy.spawn("dmenu_run")),
+    Key([mod], "t", lazy.spawn("thunderbird")),
+    Key([mod], "q", lazy.spawn("qutebrowser")),
+    Key([mod], "g", lazy.spawn("google-chrome-stable")),
 
      # Sound
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
@@ -89,10 +93,10 @@ for i in groups:
 
 layouts = [
     layout.MonadTall(),
-    layout.Bsp(),
+    layout.Bsp(border_focus="ffffff", border_width=2),
     layout.Max(),
-    layout.Stack()
-    # layout.Floating(border_focus="ffffff", border_width=2),
+    # layout.Stack(),
+    # layout.Floating(border_focus="ffffff", border_width=2, fullscreen_border_width=2),
 ]
 
 ##### DEFAULT WIDGET SETTINGS #####
