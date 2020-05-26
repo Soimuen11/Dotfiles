@@ -24,9 +24,8 @@ set background=dark
 colorscheme PaperColor
 "colorscheme candy
 "colorscheme distinguished
-"syntax enable
-"set background=dark
 "colorscheme solarized
+"set background=dark
 let g:syntastic_tex_checkers = ['lacheck']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -35,3 +34,6 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
 "QUICK SETUP END
+
+"Keybindings
+map <Del> :x!
