@@ -52,16 +52,26 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
 
-    # Specific apps bindings
+    # Custom app bindings
     Key([mod], "d", lazy.spawn("dmenu_run")),
     Key([mod], "t", lazy.spawn("thunderbird")),
     Key([mod], "q", lazy.spawn("qutebrowser")),
     Key([mod], "g", lazy.spawn("google-chrome-stable")),
+    Key([mod], "o", lazy.spawn("libreoffice")),
 
-     # Sound
-    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute"))
+     # Sound with amixer
+    # Key([], "XF86AudioMute", lazy.spawn("amixer sset Master toggle")),
+    # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-")),
+    # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+")),
+
+     # Sound with pulseaudio
+    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 2 toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 2 -5%")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 2 +5%")),
+
+    # Sreen brightness controls
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 20")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 20")),
 ]
 
 # WORKSPACES (TERM, WEB, MAIL...) TO-BE-DONE
