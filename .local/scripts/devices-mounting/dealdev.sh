@@ -10,7 +10,7 @@ setup () {
 	for dir in "${dirs[@]}"
 	do
 		if [[ ! -d /run/media/$dir ]]; 
-			then mkdir /run/media/$dir
+			then sudo mkdir /run/media/$dir
 			echo "created /run/media/$dir"
 		fi
 	done
