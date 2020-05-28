@@ -60,16 +60,16 @@ keys = [
     Key([mod], "o", lazy.spawn("libreoffice")),
 
      # Sound with amixer
-    # Key([], "XF86AudioMute", lazy.spawn("amixer sset Master toggle")),
-    # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-")),
-    # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+")),
+    Key([], "XF86AudioMute", lazy.spawn("amixer sset Master toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+")),
 
      # Sound with pulseaudio
-    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 2 toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 2 -5%")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 2 +5%")),
+    # Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 2 toggle")),
+    # Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 2 -5%")),
+    # Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 2 +5%")),
 
-    # Sreen brightness controls
+    # Sreen brightness controls with xbacklight
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 20")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 20")),
 ]
@@ -127,20 +127,18 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.GroupBox(font="Ubuntu Bold", borderwidth = 1, highlight_method = "block", rounded=False),
-                widget.TextBox(text='', background="000000", foreground="2F4F4F", padding=0, fontsize=60, width=23),
-                # widget.Prompt(),
-                widget.WindowName(background="2F4F4F"),
-                widget.TextBox(text='', background="2F4F4F", foreground="000000", padding=0, fontsize=60, width=23),
+                widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
+                widget.WindowName(background="8B0000"),
+                widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                widget.TextBox(text='', background="000000", foreground="2F4F4F", padding=0, fontsize=60, width=23),
-                widget.Battery(background="2F4F4F", format="{percent:2.0%} {hour:d}h{min:02d}"),
-                widget.TextBox(text='', background="2F4F4F", foreground="000000", padding=0, fontsize=60, width=23),
+                widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
+                widget.Battery(background="8B0000", format="{percent:2.0%} {hour:d}h{min:02d}"),
+                widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
                 widget.CPUGraph(),
-                widget.TextBox(text='', background="000000", foreground="2F4F4F", padding=0, fontsize=60, width=23),
-                widget.CurrentLayout(background="2F4F4F", fontsize = 15),
-                widget.TextBox(text='', background="2F4F4F", foreground="000000", padding=0, fontsize=60, width=23),
+                widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
+                widget.CurrentLayout(background="8B0000", fontsize = 15),
+                widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
                 widget.QuickExit(default_text="\u23FB", fontsize=18, countdown_format="{}", countdown_start=10),
-                # widget.TextBox(text='', background="000000", foreground="0000FF", padding=0, fontsize=60, width=23),
                 widget.Moc(background="0000FF",play_color="ffffff", max_chars=20),
             ],
             24,
