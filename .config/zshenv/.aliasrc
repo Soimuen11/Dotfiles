@@ -37,7 +37,7 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 		n="nvim" \
 		v="vim" \
 		tm="tmux" \
-		mp="mocp"
+		mp="mocp -T /usr/share/moc/themes/darkdot_theme"
 
 ## Web browsing
 	alias \
@@ -56,6 +56,8 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 	alias pm="sudo pacman -Syu" 
 	alias pavu="pavucontrol" 
 	alias tp="htop" 
+	alias lock="i3lock-fancy"
+	alias logs="sudo journalctl -n 10 -o json-pretty"
 
 ## Git
 	alias \
