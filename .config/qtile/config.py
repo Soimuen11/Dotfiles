@@ -3,8 +3,9 @@ import re
 from libqtile.config import Key, Screen, Group, Match, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget
-# from libqtile import hook
 from typing import List  # noqa: F401
+from libqtile.dgroups import simple_key_binder
+# from libqtile import hook
 
 ### KEYBINDINGS ###
 mod = "mod4"
@@ -58,6 +59,7 @@ keys = [
     Key([mod], "q", lazy.spawn("qutebrowser")),
     Key([mod], "g", lazy.spawn("google-chrome-stable")),
     Key([mod], "o", lazy.spawn("libreoffice")),
+    Key([mod], "v", lazy.spawn("vlc")),
 
      # Sound with amixer
     Key([], "XF86AudioMute", lazy.spawn("amixer sset Master toggle")),
@@ -74,39 +76,38 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 20")),
 ]
 
-# WORKSPACES (TERM, WEB, MAIL...) TO-BE-DONE
-# workspaces = [
-#       Group("1. Term"),
-#       Group("2. Web"),
-#       Group("3. Mail"), 
-#       Group("4. VBox"),
-#       Group("5. Music"),
-#       Group("6. Video"),
-#       Group("7. None"),
-#       Group("8. None"),
-#       Group("9. None"),
-# ]
+### GROUPS ###
 
-# groups = [Group(i) for i in workspaces]
+# --> Named groups <--
+groups = [
+    Group("Web", matches=[Match(wm_class=["google-chrome-stable"])]),
+    Group("Mail", matches=[Match(wm_class=["thunderbird"])]),
+    Group("Term"),
+    Group("Media", matches=[Match(wm_class=["vlc"])]),
+    Group("Extras"),
+]
+dgroups_key_binder = simple_key_binder("mod4")
 
-groups = [Group(i) for i in "123456789"]
-
-for i in groups:
-    keys.extend([
-            # mod1 + nb of group = switch to group
-            Key([mod], i.name, lazy.group[i.name].toscreen()),
-            # mod1 + shift + nb of group = switch to & move focused window to group
-            Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
-        ])
+# --> Numbered groups <--
+# groups = [Group(i) for i in "123456789"]
+# for i in groups:
+#     keys.extend([
+#             # mod1 + nb of group = switch to group
+#             Key([mod], i.name, lazy.group[i.name].toscreen()),
+#             # mod1 + shift + nb of group = switch to & move focused window to group
+#             Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
+#         ])
+# dgroups_key_binder = None
 
 ### LAYOUTS ###
 
 layouts = [
-    layout.MonadTall(),
-    layout.Bsp(border_focus="ffffff", border_width=2),
+    # red borders
+    # layout.MonadTall(border_width=3, border_focus="8B0000"),
+    # transparent borders (adding 2 zeroes at the end of the color makes transparency)
+    layout.MonadTall(border_width=6, border_focus="8B000000"),
+    #all windows => full screen
     layout.Max(),
-    # layout.Stack(),
-    # layout.Floating(border_focus="ffffff", border_width=2, fullscreen_border_width=2),
 ]
 
 ##### DEFAULT WIDGET SETTINGS #####
@@ -155,7 +156,6 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 
-dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 main = None
 follow_mouse_focus = True
