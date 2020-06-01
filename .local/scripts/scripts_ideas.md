@@ -17,3 +17,4 @@
 	+ converter
 	+ dotfiles updater -> rm old ones and copy new ones into dotfiles folder
 	+ arch installer
+	+ dmenu suggesting man pages & opening man page as pdf in zathura 
