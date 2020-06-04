@@ -9,13 +9,11 @@
 # sudo apt update
 # sudo apt upgrade
 
-#archlinux
-# pacman -S sudo
-# sudo pacman -S zsh git vim neovim vlc moc base-devel
-
-#debian-based distros
-# sudo apt install git vim neovim vlc moc 
-
+# sort & install fave programs with pacman
+# ignore AUR packages
+pacman -S --needed $(comm -12 <(pacman -Slq | sort) < (sort arch_packages))
+# same with yay
+yay -S --needed $(comm -12 <(yay -Slq | sort) < (sort arch_packages))
 
 #set up architecture
 mkdir -p ~/.local 
