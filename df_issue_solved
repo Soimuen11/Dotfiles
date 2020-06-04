@@ -1,1 +1,0 @@
-systemctl --user stop xdg-document-portal.service

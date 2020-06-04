@@ -17,10 +17,5 @@
 	#ip a
 	#lscpi
 
-#IF MOUSE STOPS WORKING
-	#sudo modprobe -r psmouse
-	#sudo modprobe psmouse 
-	#scan network
-	
 #PROMPT PIMPING
 #PROMPT=$'%m %n %/[%t] $'
