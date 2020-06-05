@@ -15,50 +15,50 @@ This repository contains my computer config files :
 
 ### qtile
 	
-	![](./.config/qtile/qtile-screenshot-3.png)
+![](./.config/qtile/qtile-screenshot-3.png)
 
-	1. Custom Keybindings :
+1. Custom Keybindings :
 
-	- Super + p = mocp /usr/share/moc/themes/darkdot_theme
-	- Super + t = thunderbird
-	- Super + g = google-chrome-stable
-	- Super + q = qutebrowser
-	- Super + v = vlc
-	- Super + c = vim ~/.config/qtile/config.py
-	- Super + o = libreoffice
-	- Super + s = pavucontrol
-	- Super + r = ranger
-	- Super + b = broot
-	- Super + enter = termite
+- Super + p = mocp /usr/share/moc/themes/darkdot_theme
+- Super + t = thunderbird
+- Super + g = google-chrome-stable
+- Super + q = qutebrowser
+- Super + v = vlc
+- Super + c = vim ~/.config/qtile/config.py
+- Super + o = libreoffice
+- Super + s = pavucontrol
+- Super + r = ranger
+- Super + b = broot
+- Super + enter = termite
 
-	- Super + W = close a window
-	- Super + Ctrl + q = Quit Qtile
-	- Super + Ctrl + r = Restart Qtile
+- Super + W = close a window
+- Super + Ctrl + q = Quit Qtile
+- Super + Ctrl + r = Restart Qtile
 	
-	- Super + h
-	- Super + j
-	- Super + k
-	- Super + l
+- Super + h
+- Super + j
+- Super + k
+- Super + l
 	
-	- Super + shift + h
-	- Super + shift + j
-	- Super + shift + k
-	- Super + shift + l
+- Super + shift + h
+- Super + shift + j
+- Super + shift + k
+- Super + shift + l
 
-	2. Layouts
+2. Layouts
 
-	- MonadTall()
-	- Max()
+- MonadTall()
+- Max()
 
-	3. Widgets
+3. Widgets
 
-	- GroupBox
-	- window name
-	- Clock
-	- Battery
-	- Cpu Graph
-	- Layout name
-	- shutdown qtile 
+- GroupBox
+- window name
+- Clock
+- Battery
+- Cpu Graph
+- Layout name
+- shutdown qtile 
 
 ### calcurse
 ### i3
