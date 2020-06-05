@@ -15,7 +15,7 @@ This repository contains my computer config files :
 
 ### qtile
 	
-![](./.config/qtile/qtile-screenshot-1.png)
+![](./.config/qtile/qtile-screenshot.png)
 ![](./.config/qtile/qtile-screenshot-2.png)
 ![](./.config/qtile/qtile-screenshot-3.png)
 
