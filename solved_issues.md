@@ -29,3 +29,13 @@ to install it -> pacman -Ss screenkey OR yay -S screenkey
 4. wii-u -> decaf OR cemu+wine
 5. pc -> wine
 6. wii + gamecube -> dolphin
+
+## easily style termite terminal
+
+termite-style (see on github)
+https://github.com/adi1090x/termite-style
+
+## Download videos from youtube
+
+youtube-dl
+youtube-view to watch yt videos directly in terminal
