@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#19 quotes in total
-random_nb=$(( $RANDOM % 18 + 1 ))
-echo $random_nb
-
+random_nb=$(( $RANDOM % 60 ))
 #pick one line in quotes file
-cat quotes | head -$random_nb | tail -1
+cat ~/.local/scripts/quote_generator/quotes | head -$random_nb | tail -1
