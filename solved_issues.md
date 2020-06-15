@@ -39,3 +39,12 @@ https://github.com/adi1090x/termite-style
 
 youtube-dl
 youtube-view to watch yt videos directly in terminal
+
+## Games on Linux
+
+Wine
+PlayOnLinux
+
+## Concatenating pdfs
+
+yay -S pdf-append
