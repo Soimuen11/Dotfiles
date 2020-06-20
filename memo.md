@@ -86,3 +86,17 @@ examples :
 8. ifconfig
 9. ip a
 10. lscpi
+
+## Formating a flashdrive
+
+check filesystem
+fsck -N /dev/sd?
+
++ Format with vFat File System
+sudo mkfs.vfat /dev/sdc1
+
++ Format with NTFS File System
+sudo mkfs.ntfs /dev/sdc1
+
++ Format with EXT4 File System
+sudo mkfs.ext4 /dev/sdc1
