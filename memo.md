@@ -1,7 +1,7 @@
 # Solved issues
 
 Starting today, June 4th 2020, this file is a collection of all the issues I
-have faced and will face on my Linux machine. 
+have faced and will face on my Linux machine.
 
 ## df : /run/user/1000 permission denied
 
@@ -18,7 +18,7 @@ sudo modprobe psmouse (restart mouse kernel module)
 
 ## display keystrokes during screencast
 
-screenkey 
+screenkey
 to install it -> pacman -Ss screenkey OR yay -S screenkey
 
 ## emulating console games
@@ -65,22 +65,23 @@ $ - End of the line
 [0-9] - any number
 \ escape something
 
-examples : 
+examples :
 - grep "something" file
-- grep "^s" file -> any line starting wit lowercase s in given file 
+- grep "^s" file -> any line starting wit lowercase s in given file
 
 ## Useful tools
 1. neofetch
 2. image viewer = sxiv
 3. pdf viewer = zathura
 (don't forget to download sth to read pdfs along with zathura)
-	
+
 ## Networking
 1. nmtui (this is the one you want)
+on archlinux, run : pacman -S networkmanager
 2. nmcli dev wifi
 3. nmcli dev wifi connect APname password
 4. nmap +ip a+ nmap -sn 10.1.0.85/24
-5. wireshark	
+5. wireshark
 6. nslookup
 7. wifite2
 8. ifconfig
