@@ -101,3 +101,6 @@ sudo mkfs.ntfs /dev/sdc1
 
 + Format with EXT4 File System
 sudo mkfs.ext4 /dev/sdc1
+
+## Removing sensitive data from a git repo
+https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
