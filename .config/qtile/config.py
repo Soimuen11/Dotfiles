@@ -1,11 +1,12 @@
-import os
-import re
-from libqtile.config import Key, Screen, Group, Match, Drag, Click
-from libqtile.command import lazy
-from libqtile import layout, bar, widget
-from typing import List  # noqa: F401
-from libqtile.dgroups import simple_key_binder
+# import os
+# import re
+# import subprocess
 # from libqtile import hook
+from libqtile import layout, bar, widget
+from libqtile.config import Key, Screen, Group, Match, Drag, Click
+from libqtile.dgroups import simple_key_binder
+from libqtile.command import lazy
+# from typing import List
 
 ### KEYBINDINGS ###
 mod = "mod4"
@@ -24,20 +25,13 @@ keys = [
     Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
     #Increase or decrease size of windows
-    Key([mod, "control"], "j", lazy.layout.grow_down()),
-    Key([mod, "control"], "k", lazy.layout.grow_up()),
-    Key([mod, "control"], "h", lazy.layout.grow_left()),
-    Key([mod, "control"], "l", lazy.layout.grow_right()),
-
-    # Move windows up or down in current stack
-    Key([mod, "control"], "k", lazy.layout.shuffle_down()),
-    Key([mod, "control"], "j", lazy.layout.shuffle_up()),
+    # Key([mod, "control"], "j", lazy.layout.grow_down()),
+    # Key([mod, "control"], "k", lazy.layout.grow_up()),
+    # Key([mod, "control"], "h", lazy.layout.grow_left()),
+    # Key([mod, "control"], "l", lazy.layout.grow_right()),
 
     # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next()),
-
-    # Swap panes of split stack
-    Key([mod, "shift"], "space", lazy.layout.rotate()),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
@@ -52,14 +46,40 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
+    # mod + control + s = shutdown machine
+    Key([mod, "control"], "s", lazy.spawn("termite -e 'shutdown now' ")),
 
-    # Custom app bindings
+    # CUSTOM APP BINDINGS
+    # d = dmenu
     Key([mod], "d", lazy.spawn("dmenu_run")),
+    # t = thunderbird
     Key([mod], "t", lazy.spawn("thunderbird")),
-    Key([mod], "q", lazy.spawn("qutebrowser")),
-    Key([mod], "g", lazy.spawn("google-chrome-stable")),
+    # o = libreoffice (o like office)
     Key([mod], "o", lazy.spawn("libreoffice")),
+    # v = vlc
     Key([mod], "v", lazy.spawn("vlc")),
+    # p = player
+    Key([mod], "p", lazy.spawn("termite -e 'mocp -T /usr/share/moc/themes/darkdot_theme'")),
+    # c = config #not working properly with nvim+termite
+    Key([mod], "c", lazy.spawn("termite -e 'vim .config/qtile/config.py'")),
+    # b = brave browser
+    Key([mod], "b", lazy.spawn("termite -e brave")),
+    # r = ranger
+    Key([mod], "r", lazy.spawn("termite -e ranger")),
+    # s = sound
+    Key([mod], "s", lazy.spawn("pavucontrol")),
+    # e = editor
+    Key([mod], "e", lazy.spawn("termite -e vim")),
+    # u = tmux
+    Key([mod], "u", lazy.spawn("termite -e tmux")),
+    # a = anki
+    Key([mod], "a", lazy.spawn("anki")),
+    # Lock screen
+    Key([mod, "shift"], "space", lazy.spawn("i3lock-fancy")),
+
+    # Sreen brightness controls with xbacklight
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 20")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 20")),
 
      # Sound with amixer
     Key([], "XF86AudioMute", lazy.spawn("amixer sset Master toggle")),
@@ -71,14 +91,16 @@ keys = [
     # Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 2 -5%")),
     # Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 2 +5%")),
 
-    # Sreen brightness controls with xbacklight
-    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 20")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 20")),
+    # Key([], "XF86AudioPrev", lazy.spawn("moc --previous")),
+    # Key([], "XF86AudioStop", lazy.spawn("moc --pause")),
+    # Key([], "XF86AudioNext", lazy.spawn("moc --next")),
+
+    # XF86Internet # toggle internet on/off
 ]
 
 ### GROUPS ###
 
-# --> Named groups <--
+# --> NAMED GROUPS <--
 groups = [
     Group("Web", matches=[Match(wm_class=["google-chrome-stable"])]),
     Group("Mail", matches=[Match(wm_class=["thunderbird"])]),
@@ -88,7 +110,7 @@ groups = [
 ]
 dgroups_key_binder = simple_key_binder("mod4")
 
-# --> Numbered groups <--
+# --> NUMBERED GROUPS <--
 # groups = [Group(i) for i in "123456789"]
 # for i in groups:
 #     keys.extend([
@@ -103,9 +125,9 @@ dgroups_key_binder = simple_key_binder("mod4")
 
 layouts = [
     # red borders
-    # layout.MonadTall(border_width=3, border_focus="8B0000"),
+    layout.MonadTall(border_width=3, border_focus="8B0000"),
     # transparent borders (adding 2 zeroes at the end of the color makes transparency)
-    layout.MonadTall(border_width=6, border_focus="8B000000"),
+    # layout.MonadTall(border_width=6, border_focus="8B000000"),
     #all windows => full screen
     layout.Max(),
 ]
@@ -123,11 +145,11 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        #replace "bottom" by "top" to put bar at the top 
+        #replace "bottom" by "top" to put bar at the top
         #(or "top" by "bottom")
         bottom=bar.Bar(
             [
-                widget.GroupBox(font="Ubuntu Bold", borderwidth = 1, highlight_method = "block", rounded=False),
+                widget.GroupBox(font="Ubuntu Bold", borderwidth = 2, highlight_method = "line", highlight_color="000000", rounded=False, active="9400D3", inactive="c0c0c0"),
                 widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
                 widget.WindowName(background="8B0000"),
                 widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
@@ -179,6 +201,13 @@ floating_layout = layout.Floating(float_rules=[
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
+
+##### STARTUP APPLICATIONS #####
+# @hook.subscribe.startup_once
+# def autostart():
+    # path to my script, under my user directory
+    # home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    # subprocess.call([home])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
