@@ -63,7 +63,7 @@ keys = [
     # c = config #not working properly with nvim+termite
     Key([mod], "c", lazy.spawn("termite -e 'vim .config/qtile/config.py'")),
     # b = brave browser
-    Key([mod], "b", lazy.spawn("termite -e brave")),
+    Key([mod], "b", lazy.spawn("brave")),
     # r = ranger
     Key([mod], "r", lazy.spawn("termite -e ranger")),
     # s = sound
@@ -102,9 +102,10 @@ keys = [
 
 # --> NAMED GROUPS <--
 groups = [
-    Group("Web", matches=[Match(wm_class=["google-chrome-stable"])]),
-    Group("Mail", matches=[Match(wm_class=["thunderbird"])]),
     Group("Term"),
+    # Group("Web", matches=[Match(wm_class=["brave"])]),
+    Group("Mail", matches=[Match(wm_class=["thunderbird"])]),
+    Group("Web"),
     Group("Media", matches=[Match(wm_class=["vlc"])]),
     Group("Extras"),
 ]
