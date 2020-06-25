@@ -104,3 +104,24 @@ sudo mkfs.ext4 /dev/sdc1
 
 ## Removing sensitive data from a git repo
 https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
+
+## Great ls commands
+
++ lsusb
++ lscpu
++ lspci
+
+## Windows (OS) list of commands
+https://www.lifewire.com/list-of-command-prompt-commands-4092302
+
+## Customize bash
+https://wiki.archlinux.org/index.php/Bash/Prompt_customization
+
+## Learn AWK
+https://www.tutorialspoint.com/awk/awk_basic_examples.htm
+
+## Learn AWS
+https://www.tutorialspoint.com/amazon_web_services/amazon_web_services_cloud_computing.htm
+
+## Installing brave
+yay -S brave-bin
