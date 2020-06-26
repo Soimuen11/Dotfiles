@@ -33,7 +33,18 @@ let g:airline_theme='base16'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
+"Disable viminfo
+let skip_defaults_vim=1
+set viminfo=""
+
 "QUICK SETUP END
 
-"Keybindings
-map <Del> :x!
+"KEYBINDINGS
+" save + exit vim with <del>
+nmap <Del> :x!
+"toggle insert mode with ctrl + space
+nnoremap <C-space> i
+imap <C-space> <Esc>
+"remove highlighting
+nmap nh :noh
+"KEYBINDINGS END
