@@ -10,6 +10,8 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 		
 		alias mk="mkdir -pv" 
 		alias tch="touch"
+		alias tl="tail"
+		alias hd="head"
 
 ## Colorize commands when possible.
 	alias \
