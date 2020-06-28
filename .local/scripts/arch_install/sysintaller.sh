@@ -1,42 +1,57 @@
 #!/bin/bash
 
-# 1. Create a user
-#add user + give it a /home
-#add the new user to sudoers group + wheel + audio + devs
+# RUN THIS BEFORE RE-INSTALLING YOUR SYSTEM!
+# pacman -Qe > arch_packages
 
-# 2.Update the system 
-# sudo pacman -Syu
-# sudo apt update
-# sudo apt upgrade
+# 1. CREATE A USER
+# Give it a /home & add it to wheel group
+read -p "Enter username: " username
+useradd -m -G wheel $username
+# let's not forget i still need to modifiy /etc/sudoers
 
-# sort & install fave programs with pacman
-# ignore AUR packages
-pacman -S --needed $(comm -12 <(pacman -Slq | sort) < (sort arch_packages))
-# same with yay
-yay -S --needed $(comm -12 <(yay -Slq | sort) < (sort arch_packages))
-
-#set up architecture
-mkdir -p ~/.local 
-mkdir -p ~/.local/bin
-mkdir -p ~/.local/scripts
-mkdir -p ~/.local/share
-mkdir -p ~/.local/repos
-mkdir -p ~/Documents/Projects
-mkdir -p ~/Downloads/TBS-Movies
-mkdir -p ~/Downloads/TBS-Musics
-mkdir -p ~/Downloads/TBS-Pictures
-mkdir -p ~/Downloads/PDFS
-
-#Download my dotfiles from github
+# DOWNLOAD MY DOTFILES FROM GITHUB
 cd ~
-git clone https://github.com/Soimuen11/dotfiles.git
+git clone https://github.com/Soimuen11/Dotfiles.git
 
-#NOT YET WORKING
-# if current shell is /bin/bash, chsh /bin/zsh
-# current_shell=$SHELL
-# if [[$SHELL=/usr/bin/bash]]; 
-# 	then chsh $user /usr/bin/zsh 
+# If current shell is /bin/bash, chsh /bin/zsh
+if [[ $SHELL=/usr/bin/bash ]]; 
+	then chsh $username /usr/bin/zsh 
+fi
 
-#Replace the present dotfiles with mine
-# vim + shell
+# 2.Updating the system
+# & re-installing fave packages
+sudo pacman -Syu
+softwares=$(cat arch_packages)
+sudo pacman -S $softwares
+# careful :  some packages must be installed with the AUR
 
+# Set up architecture
+mkdir -v -p ~/.local 
+mkdir -v -p ~/.local/bin
+mkdir -v -p ~/.local/scripts
+mkdir -v -p ~/.local/share
+mkdir -v -p ~/.local/repos
+mkdir -v -p ~/Documents/Projects
+mkdir -v -p ~/Downloads/TBS-Movies
+mkdir -v -p ~/Downloads/TBS-Musics
+mkdir -v -p ~/Downloads/TBS-Pictures
+mkdir -v -p ~/Downloads/PDFS
+
+# Set up symbolic links for my personal scripts
+ln -s ~/.local/scripts/mystery.sh ~/.local/bin/mystery
+ln -s ~/.local/scripts/generator.sh ~/.local/bin/qutegen
+ln -s ~/.local/scripts/translator.sh ~/.local/bin/translator
+ln -s ~/.local/scripts/mouse.sh ~/.local/bin/mouse
+ln -s ~/.local/scripts/usbmounter.sh ~/.local/bin/usbmounter
+ln -s ~/.local/scripts/weather.sh ~/.local/bin/weather
+
+# Replace the present dotfiles with mine
+rm -rv ~/.vim* ~/.zsh* ~/.bash*
+cp -rv ~/Dotfiles/.zshrc /home/$username
+cp -rv ~/Dotfiles/.Xmodmap /home/$username
+cp -rv ~/Dotfiles/.bash/.bashrc /home/$username
+cp -rv ~/Dotfiles/.vim ~/Dotfiles/.vimrc /home/$username
+
+# Other :
+	# Add .config folder
+	# Set up qtile window manager
