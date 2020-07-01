@@ -181,7 +181,6 @@ ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i 1
 ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 output.mkv -vsync 1
 
 ### Directory
-
 If you don't specify a directory to save the video, it will be saved in the directory ffmpeg was launched from.
 
 ### Converting files
@@ -204,3 +203,8 @@ ffmpeg -ss 00:01:00 -i input.mp4 -to 00:02:00 -c copy output.mp4
 ### Info source
 https://www.howtogeek.com/446706/how-to-create-a-screencast-on-linux/
 ffmpeg.org
+
+## Fuzzy Finders
+Find can be a slow command
+ + Use broot instead
+ + There's also fzf which is quite popular and can be used together with bfs.
