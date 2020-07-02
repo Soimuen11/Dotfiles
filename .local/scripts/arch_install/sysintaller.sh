@@ -3,7 +3,15 @@
 # RUN THIS BEFORE RE-INSTALLING YOUR SYSTEM!
 # pacman -Qe > arch_packages
 
-# 1. CREATE A USER
+# UPDATING THE SYSTEM
+# & re-installing fave packages
+sudo pacman -Syu
+sudo pacman -S git 
+softwares=$(cat arch_packages)
+sudo pacman -S $softwares
+# careful :  some packages must be installed with the AUR
+
+# CREATE A USER
 # Give it a /home & add it to wheel group
 read -p "Enter username: " username
 useradd -m -G wheel $username
@@ -17,13 +25,6 @@ git clone https://github.com/Soimuen11/Dotfiles.git
 if [[ $SHELL=/usr/bin/bash ]]; 
 	then chsh $username /usr/bin/zsh 
 fi
-
-# 2.Updating the system
-# & re-installing fave packages
-sudo pacman -Syu
-softwares=$(cat arch_packages)
-sudo pacman -S $softwares
-# careful :  some packages must be installed with the AUR
 
 # Set up architecture
 mkdir -v -p ~/.local 
@@ -55,3 +56,4 @@ cp -rv ~/Dotfiles/.vim ~/Dotfiles/.vimrc /home/$username
 # Other :
 	# Add .config folder
 	# Set up qtile window manager
+	# Install Lxde

@@ -152,6 +152,9 @@ Change Display to 3d and VboxSVGA
 
 ## FFMPEG
 
+### webcamming
+ffmpeg -y -i /dev/video0 out.mkv
+
 ### determining available resolutions
 xrandr
 
@@ -208,3 +211,8 @@ ffmpeg.org
 Find can be a slow command
  + Use broot instead
  + There's also fzf which is quite popular and can be used together with bfs.
+
+## Modifying images
++ ImageMagick (cli tool); imagemagick.org -> official site; they also have a github page
++ canva.com -> very quick and effective for youtube thumbnails
++ gimp -> free software, equivalent to photoshop
