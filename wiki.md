@@ -196,10 +196,10 @@ ffmpeg -i arch-install.mp4  -i archinstall-soundtrack.mp4 -c copy -map 0:v:0 -ma
 ### concatenating files
 create a list of files in a FILE
 ex : filename
-	file 1
-	file 2
-	file 3
-	ffmpeg -f concat -safe 0 -i /home/soimuen/Downloads/FILENAME -c copy output.webm
+	file "file1_path"
+	file2 "file1_path"
+	file3 "file1_path"
+run : ffmpeg -f concat -safe 0 -i /home/soimuen/Downloads/FILENAME -c copy output.webm
 ### cutting videos
 ffmpeg -ss 00:01:00 -i input.mp4 -to 00:02:00 -c copy output.mp4
 
