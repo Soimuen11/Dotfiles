@@ -180,6 +180,9 @@ ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i 1
 + async 1: Set the audio sync method. This is a deprecated parameter, but we’re using it here to avoid error messages that can be ignored.
 + vsync 1: set the video sync method. This is a deprecated parameter, but we’re using it here to avoid error messages that can be ignored.
 
+### Extrat audio from video
+ffmpeg -i sample.avi -q:a 0 -map a sample.mp3
+
 ### Capture only video, no audio
 ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 output.mkv -vsync 1
 
@@ -190,7 +193,7 @@ If you don't specify a directory to save the video, it will be saved in the dire
 ffmpeg -i output.mkv output.mp4
 general formula : ffmpeg -i output.oldformat output.wantedformat
 
-### add background music
+### Add background music
 ffmpeg -i arch-install.mp4  -i archinstall-soundtrack.mp4 -c copy -map 0:v:0 -map 1:a:0 output2.mp4
 
 ### concatenating files
