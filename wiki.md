@@ -203,9 +203,22 @@ run : ffmpeg -f concat -safe 0 -i /home/soimuen/Downloads/FILENAME -c copy outpu
 ### cutting videos
 ffmpeg -ss 00:01:00 -i input.mp4 -to 00:02:00 -c copy output.mp4
 
+### Burning subs to video
+NOTE: This solution "burns the subtitles" into the video, so that every viewer of the video will be forced to see them.
+
+Use the libass library (make sure your ffmpeg install has the library in the configuration --enable-libass).
+
+First convert the subtitles to .ass format:
+
+ffmpeg -i subtitles.srt subtitles.ass
+Then add them using a video filter:
+
+ffmpeg -i mymovie.mp4 -vf ass=subtitles.ass mysubtitledmovie.mp4
+
 ### Info source
 https://www.howtogeek.com/446706/how-to-create-a-screencast-on-linux/
 ffmpeg.org
+stackexchange
 
 ## Fuzzy Finders
 Find can be a slow command
