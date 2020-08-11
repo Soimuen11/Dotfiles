@@ -20,14 +20,14 @@ systemctl --user stop xdg-document-portal.service
 
 ## If mouse stops working
 
-sudo modprobe -r psmouse (kill mouse kernel module)
-sudo modprobe psmouse (restart mouse kernel module)
-(use my script called "mouse" which does exactly that)
++ sudo modprobe -r psmouse (kill mouse kernel module)
++ sudo modprobe psmouse (restart mouse kernel module)
++ use my script called "mouse" which does exactly that
 
 ## Display keystrokes during screencast
 
-screenkey
-to install it -> pacman -Ss screenkey OR yay -S screenkey
++ screenkey
++ to install it -> pacman -Ss screenkey OR yay -S screenkey
 
 ## Emulating console games
 
@@ -40,39 +40,40 @@ to install it -> pacman -Ss screenkey OR yay -S screenkey
 
 ## Easily style termite terminal
 
-termite-style (see on github)
-https://github.com/adi1090x/termite-style
++ termite-style (see on github)
++ https://github.com/adi1090x/termite-style
 
 ## Download videos from youtube
 
-youtube-dl
-youtube-view to watch yt videos directly in terminal
++ youtube-dl
++ youtube-view to watch yt videos directly in terminal
+(you need an API to use youtube-view)
 
 ## Games on Linux
 
-Wine
-PlayOnLinux
-Steam
++ Wine
++ PlayOnLinux
++ Steam
 
 ## Concatenating pdfs
 
-yay -S pdf-append
++ yay -S pdf-append
 
 ## Regular expressions basics
 
-. - any one character
-\* - Match any number of previous (includin 0)
-\+ - Match any number of previous
-$ - End of the line
-^ - Beginning of the line
-\S - any non-whitespace character
-\s - any whitespace character
-? - optional
-[a-z] - any lowercase letter
-[A-Z] - any uppercase letter
-[A-Za-z] - any letter
-[0-9] - any number
-\ escape something
++ . - any one character
++ \* - Match any number of previous (includin 0)
++ \+ - Match any number of previous
++ $ - End of the line
++ ^ - Beginning of the line
++ \S - any non-whitespace character
++ \s - any whitespace character
++ ? - optional
++ [a-z] - any lowercase letter
++ [A-Z] - any uppercase letter
++ [A-Za-z] - any letter
++ [0-9] - any number
++ \ escape something
 
 + Examples :
 	- grep "something" file
@@ -101,7 +102,7 @@ on archlinux, run : pacman -S networkmanager
 
 ## Formating a flashdrive
 
-check filesystem
++ check filesystem
 fsck -N /dev/sd?
 
 + Format with vFat File System
@@ -114,7 +115,7 @@ sudo mkfs.ntfs /dev/sdc1
 sudo mkfs.ext4 /dev/sdc1
 
 ## Removing sensitive data from a git repo
-https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
++ https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
 
 ## Great ls commands
 
@@ -135,7 +136,7 @@ https://www.tutorialspoint.com/awk/awk_basic_examples.htm
 https://www.tutorialspoint.com/amazon_web_services/amazon_web_services_cloud_computing.htm
 
 ## VPS 
-Virtual Private Server
+[Virtual Private Server]
 + Linode
 + AWS
 + Google
@@ -146,15 +147,15 @@ Virtual Private Server
 + epik
 
 ## Installing brave
-yay -S brave-bin
++ yay -S brave-bin
 
 ## copy text from vim to an external program
 "+y
 
 ## Installing android in Vbox
-Change motherboard to PS/2 Mouse in System tab
-Change Processors to 2+
-Change Display to 3d and VboxSVGA
++ Change motherboard to PS/2 Mouse in System tab
++ Change Processors to 2+
++ Change Display to 3d and VboxSVGA
 
 ## FFMPEG
 
