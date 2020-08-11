@@ -79,7 +79,7 @@ systemctl --user stop xdg-document-portal.service
 	- grep "something" file
 	- grep "^s" file -> any line starting wit lowercase s in given file
 
-## Useful tools
+## Useful Programs
 1. neofetch
 2. image viewer = sxiv
 3. pdf viewer = zathura
