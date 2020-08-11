@@ -1,7 +1,21 @@
-# MY WIKI
+# MY PERSONAL WIKI
+
+|_ _|__ _ _ __  _ __   ___| |_| |_ __ _ 
+ | |/ _` | '_ \| '_ \ / _ \ __| __/ _` |
+ | | (_| | | | | | | |  __/ |_| || (_| |
+|___\__,_|_| |_|_| |_|\___|\__|\__\__,_|
+                                        
+ ____  _     _ _ _                  _      __        ___ _    _ 
+|  _ \| |__ (_) (_)_ __  _ __   ___( )___  \ \      / (_) | _(_)
+| |_) | '_ \| | | | '_ \| '_ \ / _ \// __|  \ \ /\ / /| | |/ / |
+|  __/| | | | | | | |_) | |_) |  __/ \__ \   \ V  V / | |   <| |
+|_|   |_| |_|_|_|_| .__/| .__/ \___| |___/    \_/\_/  |_|_|\_\_|
+                  |_|   |_|                                     
 
 Starting today, June 4th 2020, this file is a collection of all the issues I
-have faced and will face on my Linux machine.
+have faced and will face on my Linux machine. It is still incomplete, since I
+have encountered many many issues, but it shall grow over time from this day
+forth.
 
 ## df : /run/user/1000 permission denied
 
