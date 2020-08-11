@@ -10,7 +10,11 @@ systemctl --user stop xdg-document-portal.service
 
 ## How to mount android phones in Linux
 
-Install simple-mtpfs (from the AUR if you are running Arch Linux)
+1. Install simple-mtpfs (from the AUR if you are running Arch Linux)
+2. Create Android/ directory in your home/
+3. Run : simple-mtpfs -o enable-move --device 1 Android/ 
+(1 being the device ID)
+4. Unmount with : fusermount -u Android/
 
 ## If mouse stops working
 
