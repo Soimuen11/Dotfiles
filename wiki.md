@@ -239,3 +239,9 @@ Find can be a slow command
 + ImageMagick (cli tool); imagemagick.org -> official site; they also have a github page
 + canva.com -> very quick and effective for youtube thumbnails
 + gimp -> free software, equivalent to photoshop
+
+## Customizing dwm
+Look in :
+/usr/share/doc/dwm/
+You'll find a Readme and a license file.
+Then create a config.h and config.mk in /usr/local

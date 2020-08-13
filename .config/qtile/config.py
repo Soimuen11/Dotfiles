@@ -126,7 +126,7 @@ dgroups_key_binder = simple_key_binder("mod4")
 
 layouts = [
     # red borders
-    layout.MonadTall(border_width=3, border_focus="8B0000"),
+    layout.MonadTall(margin=5, border_width=3, border_focus="8B0000"),
     # transparent borders (adding 2 zeroes at the end of the color makes transparency)
     # layout.MonadTall(border_width=6, border_focus="8B000000"),
     #all windows => full screen
