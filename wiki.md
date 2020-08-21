@@ -256,3 +256,6 @@ in .local/repos/
 6. if something goes wrong, look into the patch file and modify your source files manually (config.h for dmenu and dwm)
 
 NB : YOU NEED TO RECOMPILE (SUDO MAKE INSTALL) EVERY TIME YOU MAKE AN EDIT !
+
+## Configuring neomutt
+git clone luke smith's mutt wizard OR download it from the AUR
