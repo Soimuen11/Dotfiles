@@ -254,3 +254,5 @@ in .local/repos/
 4. download the patches
 5. run : patch -p1 < name-of-patch.diff
 6. if something goes wrong, look into the patch file and modify your source files manually (config.h for dmenu and dwm)
+
+NB : YOU NEED TO RECOMPILE (SUDO MAKE INSTALL) EVERY TIME YOU MAKE AN EDIT !
