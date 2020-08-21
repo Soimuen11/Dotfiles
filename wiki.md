@@ -245,3 +245,12 @@ Look in :
 /usr/share/doc/dwm/
 You'll find a Readme and a license file.
 Then create a config.h and config.mk in /usr/local
+
+### Patching
+1. clone the repository of the program you want to patch (eg: dmenu)
+in .local/repos/
+( 2. make)
+3. cd into the repo && run : sudo make install
+4. download the patches
+5. run : patch -p1 < name-of-patch.diff
+6. if something goes wrong, look into the patch file and modify your source files manually (config.h for dmenu and dwm)
