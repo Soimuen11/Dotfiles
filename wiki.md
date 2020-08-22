@@ -259,3 +259,8 @@ NB : YOU NEED TO RECOMPILE (SUDO MAKE INSTALL) EVERY TIME YOU MAKE AN EDIT !
 
 ## Configuring neomutt
 git clone luke smith's mutt wizard OR download it from the AUR
+
+## hdparm
+https://wiki.archlinux.org/index.php/Hdparm#Putting_a_drive_to_sleep_directly_after_boot
+
+hdparm is a command line utility to set and view hardware parameters of hard disk drives. It can also be used as a simple benchmarking tool.
