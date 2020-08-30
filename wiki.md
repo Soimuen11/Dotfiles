@@ -187,7 +187,7 @@ ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i 1
 + async 1: Set the audio sync method. This is a deprecated parameter, but we’re using it here to avoid error messages that can be ignored.
 + vsync 1: set the video sync method. This is a deprecated parameter, but we’re using it here to avoid error messages that can be ignored.
 
-### Extrat audio from video
+### Extract audio from video
 ffmpeg -i sample.avi -q:a 0 -map a sample.mp3
 
 ### Capture only video, no audio
@@ -229,6 +229,12 @@ ffmpeg -i mymovie.mp4 -vf ass=subtitles.ass mysubtitledmovie.mp4
 https://www.howtogeek.com/446706/how-to-create-a-screencast-on-linux/
 ffmpeg.org
 stackexchange
+https://ostechnix.com/20-ffmpeg-commands-beginners/
+https://wiki.archlinux.org/index.php/FFmpeg#Recording_webcam
+
+## Video Editing
++ kdenlive
++ ffmpeg
 
 ## Fuzzy Finders
 Find can be a slow command
@@ -264,3 +270,9 @@ git clone luke smith's mutt wizard OR download it from the AUR
 https://wiki.archlinux.org/index.php/Hdparm#Putting_a_drive_to_sleep_directly_after_boot
 
 hdparm is a command line utility to set and view hardware parameters of hard disk drives. It can also be used as a simple benchmarking tool.
+
+## Stream with CVLC command line mode
+RUN :
++ vlc v4l2:// :v4l-vdev="/dev/video0"
+THEN start the video with :
++ ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i 1 output.mkv -async 1 -vsync 1
