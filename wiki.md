@@ -276,3 +276,20 @@ RUN :
 + vlc v4l2:// :v4l-vdev="/dev/video0"
 THEN start the video with :
 + ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i 1 output.mkv -async 1 -vsync 1
+
+## Distros I want to look more into
++ CRUX
++ Gentoo
++ Source Mage
++ LFS
++ Slackware / openSuse
++ Void Linux
+
+## Mother distros
+1. Slackware
+2. Debian
+3. Ubuntu
+4. Sorcerer
+5. Crux (just before Arch)
+6. Gentoo / Enoch
+7. Redhat (Fedora, CentOS, others)

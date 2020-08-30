@@ -51,7 +51,7 @@ keys = [
 
     # CUSTOM APP BINDINGS
     # d = dmenu
-    Key([mod], "d", lazy.spawn("dmenu_run")),
+    Key([mod], "d", lazy.spawn("dmenu_run -c -l 20")),
     # t = thunderbird
     Key([mod], "t", lazy.spawn("thunderbird")),
     # o = libreoffice (o like office)
