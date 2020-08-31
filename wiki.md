@@ -273,9 +273,15 @@ hdparm is a command line utility to set and view hardware parameters of hard dis
 
 ## Stream with CVLC command line mode
 RUN :
-+ vlc v4l2:// :v4l-vdev="/dev/video0"
++ vlc v4l2:// :v4l-vdev="/dev/video0" OR mpv /dev/video0
 THEN start the video with :
 + ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i 1 output.mkv -async 1 -vsync 1
+
+## Audio recording
++ PulseAudio
++ Alsa
++ Audacity
++ Sox (for terminal)
 
 ## Distros I want to look more into
 + CRUX
@@ -293,3 +299,30 @@ THEN start the video with :
 5. Crux (just before Arch)
 6. Gentoo / Enoch
 7. Redhat (Fedora, CentOS, others)
+
+## Iptables Firewall Rules
+A firewall is essentially a way to filter traffic.
+What traffic do you want to allow / block ?
+
+There are 3 different ways that data can be sent :
++ Input = whenever you are receiving data (eg from the internet)
++ Output = Whenever you are sending data out
++ Forward = You see that a lot on routers. When data passes through from one device to another.
+
+In between brackets, you have the POLICY, which ACCEPTs everything by default.
+
+### Commands
++ iptables -L (or --list) : List  current firewall rules
++ iptables -P POLICY DROP/ACCEPT : Change a (-P) policy from drop to accept, or vice versa.
+example : iptables -P FORWARD DROP
+If your computer is not set up as a router, you don't need FORWARD to accept everything, so you can set its policty to DROP.
++ iptables -A : Add or Append a rule to the bottom of the chain
++ iptables -I : Add or Append a rule to the top of the chain
+
+### Make rules permanent
+sudo iptables-save > /etc/iptables/iptables.rules
+
+### Fast setup
+clone this repository : https://github.com/ChrisTitusTech/firewallsetup.git
+
+## LVM
