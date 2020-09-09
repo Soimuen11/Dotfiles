@@ -325,4 +325,9 @@ sudo iptables-save > /etc/iptables/iptables.rules
 ### Fast setup
 clone this repository : https://github.com/ChrisTitusTech/firewallsetup.git
 
+## Ranger
++ Rename several files in one go : select the files you wish to rename with the
+  space bar. Then type :bulkrename. That will open your fave text-editor and
+  then you can rename them as you wish.
+
 ## LVM
