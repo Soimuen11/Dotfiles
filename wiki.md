@@ -330,4 +330,7 @@ clone this repository : https://github.com/ChrisTitusTech/firewallsetup.git
   space bar. Then type :bulkrename. That will open your fave text-editor and
   then you can rename them as you wish.
 
+## dmesg
+used to control or examine the kernel ring buffer.
+
 ## LVM
