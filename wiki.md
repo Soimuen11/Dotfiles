@@ -333,4 +333,26 @@ clone this repository : https://github.com/ChrisTitusTech/firewallsetup.git
 ## dmesg
 used to control or examine the kernel ring buffer.
 
+## systemd-analyze
+analyze how much time it takes for each service to load (how long to completely boot your pc)
++ systemd-analyze
++ systemd-analyze critical-chain graphical.target
++ systemd-analyze blame
+
+## Managing logs
+last : shows a listing of last logged in users
+
+## pacman
+pacman -S : install a program
+pacman -Ss : search for a program
+pacman -Syu : update + upgrade the system
+pacman -Syyuu 
+pacman -Q
+pacman -Qte
+pacman -R OR pacman -Rns : This removes a program and all its dependencies / config files
+pacman -Rdd $ program : This removes only the program without its dependencies
+pacman -Rc $program : This removes all the packages which depend on a program
+
+## Groff / Troff
+
 ## LVM

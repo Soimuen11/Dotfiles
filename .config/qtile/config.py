@@ -1,3 +1,9 @@
+# ____  _     _ _  __        __                     _        ___  _   _ _      
+#|  _ \| |__ (_) | \ \      / /_ _ _   _ _ __   ___( )___   / _ \| |_(_) | ___ 
+#| |_) | '_ \| | |  \ \ /\ / / _` | | | | '_ \ / _ \// __| | | | | __| | |/ _ \
+#|  __/| | | | | |   \ V  V / (_| | |_| | | | |  __/ \__ \ | |_| | |_| | |  __/
+#|_|   |_| |_|_|_|    \_/\_/ \__,_|\__, |_| |_|\___| |___/  \__\_\\__|_|_|\___|
+#                                  |___/                                       
 # import os
 # import re
 # import subprocess
@@ -24,13 +30,7 @@ keys = [
     Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
-    #Increase or decrease size of windows
-    # Key([mod, "control"], "j", lazy.layout.grow_down()),
-    # Key([mod, "control"], "k", lazy.layout.grow_up()),
-    # Key([mod, "control"], "h", lazy.layout.grow_left()),
-    # Key([mod, "control"], "l", lazy.layout.grow_right()),
-
-    # Switch window focus to other pane(s) of stack
+#    # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next()),
 
     # Toggle between split and unsplit sides of stack.
@@ -51,8 +51,9 @@ keys = [
 
     # CUSTOM APP BINDINGS
     # d = dmenu
-    Key([mod], "d", lazy.spawn("dmenu_run -c -l 20")),
-    # t = thunderbird
+    # Key([mod], "d", lazy.spawn("dmenu_run -c -l 20")),
+    Key([mod], "d", lazy.spawn("dmenu_run")),
+    #    # t = thunderbird
     Key([mod], "t", lazy.spawn("thunderbird")),
     # o = libreoffice (o like office)
     Key([mod], "o", lazy.spawn("libreoffice")),
@@ -77,7 +78,7 @@ keys = [
     # Lock screen
     Key([mod, "shift"], "space", lazy.spawn("i3lock-fancy")),
 
-    # Sreen brightness controls with xbacklight
+   # Screen brightness controls with xbacklight
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 20")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 20")),
 
@@ -151,18 +152,18 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.GroupBox(font="Ubuntu Bold", borderwidth = 2, highlight_method = "line", highlight_color="000000", rounded=False, active="9400D3", inactive="c0c0c0"),
-                widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
+                # widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
                 widget.WindowName(background="8B0000"),
-                widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
+                # widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
+                # widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
                 widget.Battery(background="8B0000", format="{percent:2.0%} {hour:d}h{min:02d}"),
-                widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
+                # widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
                 widget.CPUGraph(),
-                widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
+                # widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
                 widget.CurrentLayout(background="8B0000", fontsize = 15),
-                widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
-                widget.QuickExit(default_text="\u23FB", fontsize=18, countdown_format="{}", countdown_start=10),
+                # widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
+                # widget.QuickExit(default_text="\u23FB", fontsize=18, countdown_format="{}", countdown_start=10),
                 widget.Moc(background="0000FF",play_color="ffffff", max_chars=20),
             ],
             24,
