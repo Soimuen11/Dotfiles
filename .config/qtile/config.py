@@ -48,6 +48,8 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown()),
     # mod + control + s = shutdown machine
     Key([mod, "control"], "s", lazy.spawn("termite -e 'shutdown now' ")),
+    # super + shift + s to take a screenshot
+    Key([mod, "shift"], "s", lazy.spawn("scrot")),
 
     # CUSTOM APP BINDINGS
     # d = dmenu
@@ -60,7 +62,7 @@ keys = [
     # v = vlc
     Key([mod], "v", lazy.spawn("vlc")),
     # p = player
-    Key([mod], "p", lazy.spawn("termite -e 'mocp -T /usr/share/moc/themes/darkdot_theme'")),
+    Key([mod], "p", lazy.spawn("termite -e 'mocp -T /usr/share/moc/themes/yellow_red_theme'")),
     # c = config #not working properly with nvim+termite
     Key([mod], "c", lazy.spawn("termite -e 'vim .config/qtile/config.py'")),
     # b = brave browser
@@ -127,7 +129,7 @@ dgroups_key_binder = simple_key_binder("mod4")
 
 layouts = [
     # red borders
-    layout.MonadTall(margin=5, border_width=3, border_focus="8B0000"),
+    layout.MonadTall(margin=7, border_width=3, border_focus="8B0000"),
     # transparent borders (adding 2 zeroes at the end of the color makes transparency)
     # layout.MonadTall(border_width=6, border_focus="8B000000"),
     #all windows => full screen

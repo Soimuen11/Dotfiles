@@ -356,3 +356,16 @@ pacman -Rc $program : This removes all the packages which depend on a program
 ## Groff / Troff
 
 ## LVM
+
+## Make You Own Music
++ Rosegarden
++ Audacity
++ LMMS : Linux Multimedia Studio
+
+## Some nice ncurses programs
++ glances : written in Python
++ ncdu : ncurses disk usage
++ mc (midnight commander) : file-system manager
++ moc
++ bastet : a tetris for terminal
++ dialog
