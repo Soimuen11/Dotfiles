@@ -3,12 +3,19 @@
 Starting today, June 4th 2020, this file is a collection of all the issues I
 have faced and will face on my Linux machine. It is still incomplete, since I
 have encountered many many issues, but it shall grow over time from this day
-forth.
+forth. I also have decided to explain more, since this file is destined to be
+read by a lot of people.
 
 ## df : /run/user/1000 permission denied
 
-systemctl --user stop xdg-document-portal.service
-(then disable so it doesn't restart on next boot)
+If you ever encounter this issue, you need to type this command in your
+terminal :
+
++ systemctl --user stop xdg-document-portal.service
+
+Since the latter only is a temporary fix, I encourage to also type this :
+
++ systemctl --user disable xdg-document-portal.service
 
 ## How to mount android phones in Linux
 
@@ -18,42 +25,71 @@ systemctl --user stop xdg-document-portal.service
 (1 being the device ID)
 4. Unmount with : fusermount -u Android/
 
-## If mouse stops working
+## If your mouse / trackpad stops working
 
-+ sudo modprobe -r psmouse (kill mouse kernel module)
-+ sudo modprobe psmouse (restart mouse kernel module)
-+ use my script called "mouse" which does exactly that
+You need to commands :
+
+1. sudo modprobe -r psmouse (kill mouse kernel module)
+2. sudo modprobe psmouse (restart mouse kernel module)
+
+Other solution :
++ use my script called "mouse" which does exactly that.
 
 ## Display keystrokes during screencast
 
+Install this program :
 + screenkey
-+ to install it -> pacman -Ss screenkey OR yay -S screenkey
++ For Arch users : pacman -S screenkey OR yay -S screenkey
 
 ## Emulating console games
 
-1. nds -> desmume
-2. gba -> vbam
-3. psp -> ppsspp
-4. wii-u -> decaf OR cemu+wine
-5. pc -> wine
-6. wii + gamecube -> dolphin
+Many emulators exist. Here are the ones I use and consider as "the best" :
 
-## Easily style termite terminal
+emulatorgames.net -> download roms
+
+1. Nintendo DS (nds) -> desmume
+2. GameBoy Advanced (gba) -> vbam
+3. PlayStation Portable (psp) -> ppsspp
+4. Wii-U -> decaf OR cemu+wine
+5. PC -> wine + playonlinux
+6. Wii + Gamecube -> dolphin
+7. Nintendo 64 -> Mupen64plus
+
+## Easily style Termite
+
+Termite is a terminal emulator which I would most definitely recommend. To
+configure colors and fonts quickly and nicely, I recommend this program which
+you can find on github :
 
 + termite-style (see on github)
 + https://github.com/adi1090x/termite-style
 
+For arch users, I believe it is also directly available in the AUR.
+
 ## Download videos from youtube
 
+This one program, I cannot live without :
+
 + youtube-dl
+
+I have never fully experienced it but some people have recommended it to me :
+
 + youtube-view to watch yt videos directly in terminal
 (you need an API to use youtube-view)
 
 ## Games on Linux
 
+Nothing is less true than "you cannot play on Linux". Try out these one of
+these 3 programs and you will not be disappointed. I highly recommend Steam. It
+has entertained me for many an hour.
+
 + Wine
 + PlayOnLinux
 + Steam
+
+All these programs are well documented in the Arch Wiki. Be careful and install
+the proper fonts/dependencies for Steam! All three programs are directly
+available with pacman or in the AUR.
 
 ## Concatenating pdfs
 
@@ -79,15 +115,20 @@ systemctl --user stop xdg-document-portal.service
 	- grep "something" file
 	- grep "^s" file -> any line starting wit lowercase s in given file
 
-## Useful Programs
-1. neofetch
-2. image viewer = sxiv
-3. pdf viewer = zathura
+## Unordered Useful Programs
++ neofetch
++ image viewer = sxiv
++ pdf viewer = zathura
 (don't forget to download sth to read pdfs along with zathura)
-4. neomutt
-5. ffmpeg
++ neomutt
++ ffmpeg
++ vlc / cvlc / nvlc (vlc with ncurses interface)
++ vlc can play the radio directly from terminal too)
++ cli-visualizer : visualize music
++ ntfs-3g
 
 ## Networking
+
 1. nmtui (this is the one you want)
 on archlinux, run : pacman -S networkmanager
 2. nmcli dev wifi
@@ -99,8 +140,9 @@ on archlinux, run : pacman -S networkmanager
 8. ifconfig
 9. ip a
 10. lscpi
+11. net-setup to set up connection from the Gentoo livecd.
 
-## Formating a flashdrive
+## Formatting a flashdrive
 
 + check filesystem
 fsck -N /dev/sd?
@@ -135,24 +177,35 @@ https://www.tutorialspoint.com/awk/awk_basic_examples.htm
 ## Learn AWS
 https://www.tutorialspoint.com/amazon_web_services/amazon_web_services_cloud_computing.htm
 
-## VPS 
-[Virtual Private Server]
-+ Linode
+## VPS [Virtual Private Server]
+
++ Linode : OpenSource & cheapest option I have found
 + AWS
 + Google
 + Digital Ocean
 + Vultr
 
 ## Buying a domain name
-+ epik
+
++ Epik (cheapest option I have found)
++ Wordpress (I wouldn't recommend it)
 
 ## Installing brave
+
+### On Arch Linux
+
 + yay -S brave-bin
 
+### On Gentoo
+
++ non lo so
+
 ## copy text from vim to an external program
+
 "+y
 
 ## Installing android in Vbox
+
 + Change motherboard to PS/2 Mouse in System tab
 + Change Processors to 2+
 + Change Display to 3d and VboxSVGA
@@ -160,15 +213,19 @@ https://www.tutorialspoint.com/amazon_web_services/amazon_web_services_cloud_com
 ## FFMPEG
 
 ### webcamming
+
 ffmpeg -y -i /dev/video0 out.mkv
 
 ### determining available resolutions
+
 xrandr
 
 ### find size and offset of particular window to capture
+
 xwininfo
 
 ### find out which pulseaudio sound sources exist 
+
 pactl list sources
 to record, find the input source (not output)
 
@@ -235,6 +292,7 @@ https://wiki.archlinux.org/index.php/FFmpeg#Recording_webcam
 ## Video Editing
 + kdenlive
 + ffmpeg
++ OBS
 
 ## Fuzzy Finders
 Find can be a slow command
@@ -369,3 +427,29 @@ pacman -Rc $program : This removes all the packages which depend on a program
 + moc
 + bastet : a tetris for terminal
 + dialog
++ vifm
+
+## Recovering deleted files
++ testdisk
+
+## Spreadsheet program with vim bindings
+SC-IM
+https://github.com/andmarti1424/sc-im
+yay -Ss sc-im
+
+## restart display manager
+sudo systemctl restart dislay-manager
+
+## vim r!
+:r! ls -> write the result of the command ls in a file directly from vim
+
+## Set keyboard without ibus
+
+###Forever :
+1. create a file : /etc/X11/xorg.conf.d/10-keyboard.conf
+2. add lines I added in my current 10-keyboard.conf
+
+###Temporarily
+
++ setxkbmap us
++ setxkbmap us -variant intl
