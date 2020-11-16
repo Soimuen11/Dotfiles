@@ -453,3 +453,6 @@ sudo systemctl restart dislay-manager
 
 + setxkbmap us
 + setxkbmap us -variant intl
+
+## bc
+bc is a built-in POSIX CLI calculator
