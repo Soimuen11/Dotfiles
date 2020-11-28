@@ -116,6 +116,7 @@ available with pacman or in the AUR.
 	- grep "^s" file -> any line starting wit lowercase s in given file
 
 ## Unordered Useful Programs
+
 + neofetch
 + image viewer = sxiv
 + pdf viewer = zathura
@@ -456,3 +457,48 @@ sudo systemctl restart dislay-manager
 
 ## bc
 bc is a built-in POSIX CLI calculator
+
+## Curl tricks
+
+### Get your IP address
+curl ifconfig.co
+curl ifconfig.co/city
+curl ifconfig.co/country
+
+### News
+curl getnews.tech
+
+### Weather
+curl wttr.in
+
+## VIFM matrix color scheme
+
+.config/vifm/colors/Default.vifm
+
+" Matrix
+" by Michael jubalh Vetter
+" https://github.com/jubalh/vifm-colors
+
+highlight clear
+
+highlight Win             cterm=none ctermfg=green    ctermbg=black
+
+highlight TopLine         cterm=none ctermfg=green       ctermbg=none
+highlight TopLineSel      cterm=none ctermfg=green       ctermbg=none
+highlight StatusLine      cterm=none ctermfg=green       ctermbg=none
+highlight Border          cterm=none ctermfg=green       ctermbg=none
+
+highlight Selected        cterm=bold ctermfg=red    ctermbg=default
+highlight CurrLine        cterm=bold ctermfg=black    ctermbg=green
+
+highlight WildMenu        cterm=underline,reverse ctermfg=white ctermbg=black
+highlight CmdLine         cterm=none ctermfg=white ctermbg=black
+highlight ErrorMsg        cterm=none ctermfg=red ctermbg=black
+
+highlight Directory       cterm=none ctermfg=blue ctermbg=default
+highlight Link            cterm=none ctermfg=yellow ctermbg=default
+highlight BrokenLink      cterm=none ctermfg=red ctermbg=default
+highlight Socket          cterm=none ctermfg=yellow ctermbg=default
+highlight Device          cterm=none ctermfg=yellow ctermbg=default
+highlight Fifo            cterm=none ctermfg=yellow ctermbg=default
+highlight Executable      cterm=none ctermfg=green ctermbg=default

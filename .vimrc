@@ -8,6 +8,8 @@ filetype plugin indent on
 "PLUGINS END
 
 "QUICK SETUP
+" set spell
+" set spelllang=fr
 set laststatus=2
 set number
 set relativenumber 
@@ -27,8 +29,8 @@ colorscheme PaperColor
 "colorscheme solarized
 "set background=dark
 let g:syntastic_tex_checkers = ['lacheck']
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
 let g:airline_theme='base16'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -47,4 +49,9 @@ nnoremap <C-space> i
 imap <C-space> <Esc>
 "remove highlighting
 nmap nh :noh
+"f5 for en spell check & f6 for fr spellcheck
+map <silent> <F5> "<Esc>:silent setlocal spell! spelllang=en<CR>"
+map <silent> <F6> "<Esc>:silent setlocal spell! spelllang=fr<CR>"
+hi clear SpellBad
+hi SpellBad cterm=underline
 "KEYBINDINGS END
