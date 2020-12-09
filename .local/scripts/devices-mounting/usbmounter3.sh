@@ -2,7 +2,6 @@
 
 # USING DMENU TO DETECT DEVICES AND MOUNT/UNMOUNT THEM
 
-
 #devices
 devices=("/dev/sdb1" "/dev/sdc1" "/dev/sdd1" "/dev/sde1")
 

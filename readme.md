@@ -75,6 +75,7 @@ There's not much in it for now but it will grow more and more over time.
   and the transparency of the terminal window.
 
 ### i3status
+
 ### neomutt
 
 - I am still working on my neomutt configuration. It currently works for one
@@ -87,7 +88,7 @@ There's not much in it for now but it will grow more and more over time.
 
 ### termite
 
-- I used a veyr helpful tool called termine-style to configure it. Here is the
+- I used a veyr helpful tool called termite-style to configure it. Here is the
   link to its github page : https://github.com/adi1090x/termite-style
 - For arch users, I know you can install termite-style directly from the AUR.
 

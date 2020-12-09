@@ -502,3 +502,31 @@ highlight Socket          cterm=none ctermfg=yellow ctermbg=default
 highlight Device          cterm=none ctermfg=yellow ctermbg=default
 highlight Fifo            cterm=none ctermfg=yellow ctermbg=default
 highlight Executable      cterm=none ctermfg=green ctermbg=default
+
+## autojump
+
+A shell program to cd faster
+Like broot or fzf (though not a fuzzy finder)
+
+## Browsers I'd recommend
+
+1. Iridium (best one regarding privacy)
+2. Brave (for its builtin js/ad-blocker)
+3. Qutebrowser
+4. Firefox
+
+## Getting RSS links
+
+FOR WEBSITES:
++ Add /feed/ at the end of the url address
+
+FOR YOUTUBE CHANNEL:
++ Press ctrl+u to go to the page sources & search for the channelId
++ Then copy-paste this url: https://www.youtube.com/feeds/videos.xml?channel_id=YOURCHANNELIDHERE
++ Add the channelId where it belongs
+
+## Create your own wiki
+
++ mediawiki (create a wikipedia-like wiki)
++ wordpress
++ code from scratch in html/css/js

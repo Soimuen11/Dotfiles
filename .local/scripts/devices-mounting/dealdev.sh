@@ -57,5 +57,4 @@ fi
 # serait nice. 
 # 4. si tu peux appeler le script avec un raccourci clavier pour
 # de/monter des clés à la volée encore plus nice
-# 5. si en plus tu gères les
-# cartes sd et les téléphones en mtp nice+++
+# 5. si en plus tu gères les cartes sd et les téléphones en mtp nice+++

@@ -1,14 +1,18 @@
 #!/bin/bash
-#This script aims at tidying up my Downloads directory
+# This script aims at tidying up my Downloads directory
+# Set up a cron job to run it once a week
+# All .jpg & .jpeg & .png should go into TBS-Pictures 
+# All .pdf into PDFs
+# All .mkv .avi .mp4 into TBS-Movies
 
-dir=$(pwd)
-if [[ $dir != /home/soimuen/Downloads ]];
-	then cd /home/soimuen/Downloads
+current_dir=$(pwd)
+if [[ $current_dir != /home/$USER/Downloads ]];
+	then cd /home/$USER/Downloads
 	else #do nothing
 		:
 fi
 
-#checking if the directories exist
+# checking if the directories exist
 declare -a dirs_to_check=("PDFs" "TBS-Movies" "TBS-Music" "TBS-Pictures")
 for dir in "${dirs_to_check[@]}"
 do
@@ -20,8 +24,7 @@ do
 	fi
 done
 
- #types of files to be checked
- #pdf, png, jpg, jpeg, mp4, mkv, avi
- cp -v *.pdf ~/Downloads/PDFs/
- cp -v *.png *.jpg *.jpeg ~/Downloads/TBS-Pictures/
- cp -v *.mkv *.avi ~/Downloads/TBS-Movies/
+mv *.pdf /home/$USER/Downloads/PDFs/
+mv *.png *.jpg *.jpeg /home/$USER/Downloads/TBS-Pictures/
+mv *.mkv *.avi *.mp4 /home/$USER/Downloads/TBS-Movies/
+mv *.iso ISOs
