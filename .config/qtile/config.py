@@ -4,15 +4,16 @@
 #|  __/| | | | | |   \ V  V / (_| | |_| | | | |  __/ \__ \ | |_| | |_| | |  __/
 #|_|   |_| |_|_|_|    \_/\_/ \__,_|\__, |_| |_|\___| |___/  \__\_\\__|_|_|\___|
 #                                  |___/                                       
-# import os
-# import re
-# import subprocess
-# from libqtile import hook
 from libqtile import layout, bar, widget
 from libqtile.config import Key, Screen, Group, Match, Drag, Click
 from libqtile.dgroups import simple_key_binder
 from libqtile.command import lazy
-# from typing import List
+
+# dependencies 
+    # -> fontawesome
+    # -> xcffib
+    # -> cairocffi
+    # -> pangocairo
 
 ### KEYBINDINGS ###
 mod = "mod4"
@@ -38,7 +39,7 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
-    Key([mod], "Return", lazy.spawn("termite")),
+    Key([mod], "Return", lazy.spawn("st")),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
@@ -47,7 +48,7 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     # mod + control + s = shutdown machine
-    Key([mod, "control"], "s", lazy.spawn("termite -e 'shutdown now' ")),
+    Key([mod, "control"], "s", lazy.spawn("st -e 'shutdown now' ")),
     # super + shift + s to take a screenshot
     Key([mod, "shift"], "s", lazy.spawn("scrot")),
 
@@ -62,19 +63,19 @@ keys = [
     # v = vlc
     Key([mod], "v", lazy.spawn("vlc")),
     # p = player
-    Key([mod], "p", lazy.spawn("termite -e 'mocp -T /usr/share/moc/themes/yellow_red_theme'")),
-    # c = config #not working properly with nvim+termite
-    Key([mod], "c", lazy.spawn("termite -e 'vim .config/qtile/config.py'")),
+    Key([mod], "p", lazy.spawn("st -e 'mocp -T /usr/share/moc/themes/yellow_red_theme'")),
+    # c = config #not working properly with nvim+st
+    Key([mod], "c", lazy.spawn("st -e 'vim .config/qtile/config.py'")),
     # b = brave browser
     Key([mod], "b", lazy.spawn("brave")),
     # r = ranger
-    Key([mod], "r", lazy.spawn("termite -e ranger")),
+    Key([mod], "r", lazy.spawn("st -e ranger")),
     # s = sound
     Key([mod], "s", lazy.spawn("pavucontrol")),
     # e = editor
-    Key([mod], "e", lazy.spawn("termite -e vim")),
+    Key([mod], "e", lazy.spawn("st -e vim")),
     # u = tmux
-    Key([mod], "u", lazy.spawn("termite -e tmux")),
+    Key([mod], "u", lazy.spawn("st -e tmux")),
     # a = anki
     Key([mod], "a", lazy.spawn("anki")),
     # Lock screen
@@ -104,14 +105,27 @@ keys = [
 ### GROUPS ###
 
 # --> NAMED GROUPS <--
-groups = [
-    Group("Term"),
+# groups = [
+    # Group("Term"),
     # Group("Web", matches=[Match(wm_class=["brave"])]),
-    Group("Mail", matches=[Match(wm_class=["thunderbird"])]),
-    Group("Web"),
-    Group("Media", matches=[Match(wm_class=["vlc"])]),
-    Group("Extras"),
-]
+    # Group("Mail", matches=[Match(wm_class=["thunderbird"])]),
+    # Group("Web"),
+    # Group("Media", matches=[Match(wm_class=["vlc"])]),
+    # Group("Extras"),
+# ]
+
+### GROUPS + ICONS ###
+
+groups = [
+    Group(" "),
+    Group(" "), 
+    Group( " "),
+    Group(" "), 
+    Group(" "), 
+    Group(" "),
+    Group(" "),
+    Group(" "),
+    Group(" ")];
 dgroups_key_binder = simple_key_binder("mod4")
 
 # --> NUMBERED GROUPS <--
@@ -154,18 +168,18 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.GroupBox(font="Ubuntu Bold", borderwidth = 2, highlight_method = "line", highlight_color="000000", rounded=False, active="9400D3", inactive="c0c0c0"),
-                # widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
+                widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
                 widget.WindowName(background="8B0000"),
-                # widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
+                widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                # widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
+                widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
                 widget.Battery(background="8B0000", format="{percent:2.0%} {hour:d}h{min:02d}"),
-                # widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
+                widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
                 widget.CPUGraph(),
-                # widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
+                widget.TextBox(text='', background="000000", foreground="8B0000", padding=0, fontsize=60, width=23),
                 widget.CurrentLayout(background="8B0000", fontsize = 15),
-                # widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
-                # widget.QuickExit(default_text="\u23FB", fontsize=18, countdown_format="{}", countdown_start=10),
+                widget.TextBox(text='', background="8B0000", foreground="000000", padding=0, fontsize=60, width=23),
+                widget.QuickExit(default_text="\u23FB", fontsize=18, countdown_format="{}", countdown_start=10),
                 widget.Moc(background="0000FF",play_color="ffffff", max_chars=20),
             ],
             24,
