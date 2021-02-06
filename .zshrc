@@ -48,12 +48,9 @@ setopt nomatch
 setopt completeinword
 	
 #PROMPT PIMPING
-PS1="%B%{$fg[yellow]%}{%{$fg[red]%}%n%{$fg[magenta]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[yellow]%}}%{$reset_color%}$%b "
+PS1="%B%{$fg[yellow]%}{%{$fg[red]%}%n%{$fg[magenta]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[yellow]%}} ~>%{$reset_color%}%b "
 
-export BROWSER="google-chrome-stable"
+export BROWSER="brave-bin"
 export EDITOR=/usr/bin/nvim	
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/10/bin
 # export PATH=/opt/texlive/2020/bin/x86_64-linux:/home/philwayne/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
-
-# if running dwm
-# xsetroot -name "Some Text"

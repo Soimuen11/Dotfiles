@@ -13,7 +13,8 @@ echo $capacity
 if [[ "$ac_adapter" = "off" ]] && [[ $capacity -lt 15 ]]; 
 then
 		# aplay r2d2-alarm.wav
-		notify-send 'Warning: Low Battery Power!' && espeak 'Warning: Low Battery Power!'
+		notify-send 'Warning: Low Battery Power!' 
+		# espeak 'Warning: Low Battery Power!'
 else
 	:
 fi

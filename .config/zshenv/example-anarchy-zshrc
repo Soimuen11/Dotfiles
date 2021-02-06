@@ -57,7 +57,7 @@ for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
    (( count = $count + 1 ))
 done
 
-### Set Colors to use in in the script
+### Set Colors to use in the script
 #############
 # Normal Colors
 Black='\e[0;30m'        # Black

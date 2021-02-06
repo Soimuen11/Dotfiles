@@ -199,7 +199,7 @@ https://www.tutorialspoint.com/amazon_web_services/amazon_web_services_cloud_com
 
 ### On Gentoo
 
-+ non lo so
++ non lo so ancora
 
 ## copy text from vim to an external program
 
@@ -530,3 +530,13 @@ FOR YOUTUBE CHANNEL:
 + mediawiki (create a wikipedia-like wiki)
 + wordpress
 + code from scratch in html/css/js
+
+## Monitor Your System
+
++ Cron / Anacron
++ dstat / htop / Perf / aide
++ sendmail / mailx / msmtp (after a cron job)
+
+## Partitioning from a bash script
+
++ sfdisk

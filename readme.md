@@ -68,6 +68,7 @@ There's not much in it for now but it will grow more and more over time.
 - moc when turned on
 
 ### calcurse
+
 ### i3
 
 - My i3 config isn't as customized as my qtile config. It is much like the

@@ -5,6 +5,8 @@
 # All .pdf into PDFs
 # All .mkv .avi .mp4 into TBS-Movies
 
+# Tidy up Download Dir
+
 current_dir=$(pwd)
 if [[ $current_dir != /home/$USER/Downloads ]];
 	then cd /home/$USER/Downloads
@@ -28,3 +30,6 @@ mv *.pdf /home/$USER/Downloads/PDFs/
 mv *.png *.jpg *.jpeg /home/$USER/Downloads/TBS-Pictures/
 mv *.mkv *.avi *.mp4 /home/$USER/Downloads/TBS-Movies/
 mv *.iso ISOs
+
+# Tidy up /home
+rm .pulse-cookie .lessht .viminfo .zcompdump

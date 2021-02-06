@@ -1,7 +1,4 @@
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-ibus-daemon -d -x
-
-feh --bg-fill /home/soimuen/Pictures/Desktop-Wallpaper/Wallpaper
+feh --bg-scale /home/philwayne/Pictures/custom-wallpapers/custom-wallpaper-opensource-2.png
+slstatus &
+xbacklight -set 40
 picom -b

@@ -1,6 +1,2 @@
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/share/powerline/bindings/bash/powerline.sh
-
-source $HOME/.config/zshenv/.aliasrc
+# source $HOME/.config/zshenv/.aliasrc
+./.local/scripts/quote_generator/generator.sh
