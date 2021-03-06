@@ -540,3 +540,6 @@ FOR YOUTUBE CHANNEL:
 ## Partitioning from a bash script
 
 + sfdisk
+
+## Edit subtitles
++ Aegisub
