@@ -290,10 +290,11 @@ stackexchange
 https://ostechnix.com/20-ffmpeg-commands-beginners/
 https://wiki.archlinux.org/index.php/FFmpeg#Recording_webcam
 
-## Video Editing
-+ kdenlive
+## Video / Audio Editing
++ kdenlive / Olive
 + ffmpeg
 + OBS
++ Audacity / Sox
 
 ## Fuzzy Finders
 Find can be a slow command
@@ -427,7 +428,7 @@ pacman -Rc $program : This removes all the packages which depend on a program
 + mc (midnight commander) : file-system manager
 + moc
 + bastet : a tetris for terminal
-+ dialog
++ dialog / smenu
 + vifm
 
 ## Recovering deleted files
@@ -543,3 +544,44 @@ FOR YOUTUBE CHANNEL:
 
 ## Edit subtitles
 + Aegisub
+
+## Pentesting programs / websites
+
+### Analyzing 
+
++ sherlock
++ whois
++ netcat
++ whatweb
++ dmitry
++ theHarvester
++ hping3
++ shodan.io
++ https://www.exploit-db.com/ | Google Hacking Database
++ linkedin.com -> social engineering
++ job boards (such as indeed.com)
++ https://lookup.icann.org/
+
+### Password Attacks
+
++ Medusa
++ John
+
+### Sniffing
+
++ Wireshark
++ Tcpdump / windump (for windows)
++ Steel Central Packet Analyzer
++ Capsa Network Analyzer
++ Omnipeek Network Analyzer
++ Observer Network Analyzer
++ Sniff-O-Matic
+
+### Other
++ xtightvncviewer
++ dig
++ nslookup
++ peach fuzzer = fuzzing technique
++ wafw00f : check if there's a firewall on target domain
++ rlogin
++ burpsuite
