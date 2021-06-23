@@ -585,3 +585,12 @@ FOR YOUTUBE CHANNEL:
 + wafw00f : check if there's a firewall on target domain
 + rlogin
 + burpsuite
+
+## Xorg programs
++ xev
++ xrandr / arandr
++ setxkbmap
+
+## Write on screen
++ banner
++ figlet
