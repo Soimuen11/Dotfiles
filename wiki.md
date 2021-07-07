@@ -448,6 +448,7 @@ sudo systemctl restart dislay-manager
 ## Set keyboard without ibus
 
 ###Forever :
+
 1. create a file : /etc/X11/xorg.conf.d/10-keyboard.conf
 2. add lines I added in my current 10-keyboard.conf
 
